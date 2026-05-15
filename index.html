@@ -1,429 +1,1178 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="fr">
+<html lang="fr-CA" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="LuxeFinish offre des services de peinture interieure, pose de gypse, tirage de joints et finition haut de gamme a Montreal, Laval et sur la Rive-Sud.">
-  <title>LuxeFinish | Peinture, gypse et finition haut de gamme a Montreal</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Femme de ménage à Longueuil, fiable et impeccable | Eco Pure</title>
+  <meta name="description" content="Service d'entretien ménager écologique à Longueuil. Profitez d'une femme de ménage fiable pour votre grand ménage résidentiel ou commercial. Certifié ÉcoLogo, assurance complète, satisfaction 100%."/>
+  <meta name="keywords" content="femme de ménage Longueuil, entretien ménager Longueuil, ménage écologique, grand ménage, nettoyage résidentiel commercial"/>
+  <meta property="og:title" content="Eco Pure – Entretien ménager écologique à Longueuil"/>
+  <meta property="og:description" content="Ménage de précision, produits certifiés ÉcoLogo, satisfaction 100% garantie."/>
+  <meta property="og:type" content="website"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <script>
     tailwind.config = {
+      darkMode: "class",
       theme: {
         extend: {
           colors: {
-            ink: "#101112",
-            paper: "#f8f8f6",
-            lime: "#c3f400",
-            blue: "#0058bc",
-            soft: "#eeeeee",
-            muted: "#666b6f"
+            "primary": "#134235",
+            "primary-container": "#2d5a4c",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#002118",
+            "on-primary-fixed-variant": "#214f41",
+            "primary-fixed": "#bcedda",
+            "primary-fixed-dim": "#a1d1bf",
+            "inverse-primary": "#a1d1bf",
+            "secondary": "#566342",
+            "secondary-container": "#d7e5bb",
+            "secondary-fixed": "#dae8be",
+            "secondary-fixed-dim": "#becca3",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#141f05",
+            "on-secondary-fixed-variant": "#3f4b2c",
+            "on-secondary-container": "#5a6745",
+            "tertiary": "#393d24",
+            "tertiary-container": "#505439",
+            "tertiary-fixed": "#e1e6c2",
+            "tertiary-fixed-dim": "#c5c9a7",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed": "#1a1d07",
+            "on-tertiary-fixed-variant": "#45492f",
+            "on-tertiary-container": "#c4c8a6",
+            "surface": "#fcf9f8",
+            "surface-bright": "#fcf9f8",
+            "surface-dim": "#dcd9d9",
+            "surface-container": "#f0eded",
+            "surface-container-low": "#f6f3f2",
+            "surface-container-high": "#eae7e7",
+            "surface-container-highest": "#e5e2e1",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e5e2e1",
+            "surface-tint": "#3a6758",
+            "on-surface": "#1c1b1b",
+            "on-surface-variant": "#404945",
+            "inverse-surface": "#313030",
+            "inverse-on-surface": "#f3f0ef",
+            "background": "#fcf9f8",
+            "on-background": "#1c1b1b",
+            "outline": "#717975",
+            "outline-variant": "#c0c8c3",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a",
+            "sage-wash": "#F1F4F0",
+            "soft-grey": "#F8F9FA",
+            "pure-white": "#FFFFFF",
+            "charcoal": "#333333",
           },
           fontFamily: {
-            sans: ["Inter", "sans-serif"],
-            mono: ["JetBrains Mono", "monospace"]
+            "display": ["Montserrat", "sans-serif"],
+            "body": ["Inter", "sans-serif"],
           },
-          boxShadow: {
-            glow: "0 0 28px rgba(0, 88, 188, 0.35)"
+          spacing: {
+            "section-sm": "64px",
+            "section-lg": "120px",
+            "margin-mobile": "16px",
+            "gutter": "24px",
           }
         }
       }
-    };
+    }
   </script>
+
   <style>
-    .glass-card {
-      background: rgba(255, 255, 255, 0.74);
-      backdrop-filter: blur(28px);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-    }
-
-    .scan-line {
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #c3f400, transparent);
-      position: absolute;
-      width: 100%;
-      top: 0;
-      animation: scan 3s infinite linear;
-    }
-
-    @keyframes scan {
-      0% { top: 0%; opacity: 0; }
-      10%, 90% { opacity: 1; }
-      100% { top: 100%; opacity: 0; }
-    }
-
     .material-symbols-outlined {
-      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .filled { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+    /* Glass nav */
+    .glass-nav {
+      background: rgba(252, 249, 248, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    /* Card shadow */
+    .card-shadow {
+      box-shadow: 0 4px 24px rgba(19, 66, 53, 0.08);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .card-shadow:hover {
+      box-shadow: 0 8px 40px rgba(19, 66, 53, 0.14);
+      transform: translateY(-4px);
+    }
+
+    /* Hero overlay */
+    .hero-overlay {
+      background: linear-gradient(105deg, rgba(19,66,53,0.82) 0%, rgba(19,66,53,0.45) 55%, rgba(19,66,53,0.1) 100%);
+    }
+
+    /* Progress bar animation */
+    .progress-fill {
+      transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Room selector button */
+    .room-btn {
+      transition: all 0.2s ease;
+    }
+    .room-btn.active {
+      background-color: #134235;
+      color: white;
+      border-color: #134235;
+    }
+
+    /* Smooth scroll behavior */
+    html { scroll-behavior: smooth; }
+
+    /* Mobile menu */
+    #mobile-menu {
+      transition: all 0.3s ease;
+      max-height: 0;
+      overflow: hidden;
+    }
+    #mobile-menu.open {
+      max-height: 300px;
+    }
+
+    /* FAQ details animation */
+    details summary::marker { display: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] summary .expand-icon { transform: rotate(180deg); }
+    .expand-icon { transition: transform 0.3s ease; }
+
+    /* Fade in on scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Before/After slider */
+    .before-after-container { position: relative; overflow: hidden; }
+    .before-label, .after-label {
+      position: absolute;
+      top: 12px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: white;
+    }
+    .before-label { left: 12px; background: rgba(51,51,51,0.85); }
+    .after-label { left: 12px; background: #134235; }
+
+    /* Toast notification */
+    #toast {
+      transform: translateX(120%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #toast.show { transform: translateX(0); }
+
+    /* Phone FAB pulse */
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+    .fab-pulse::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #becca3;
+      animation: pulse-ring 2s ease-out infinite;
+    }
+
+    /* Estimation result */
+    #estimation-result {
+      transition: all 0.4s ease;
     }
   </style>
 </head>
-<body class="bg-paper text-ink font-sans">
-  <nav class="fixed top-0 z-50 w-full border-b border-white/25 bg-white/80 shadow-sm backdrop-blur-xl">
-    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-10">
-      <a class="text-2xl font-extrabold tracking-tight" href="#accueil" aria-label="Retour a l'accueil">LuxeFinish</a>
-      <div class="hidden items-center gap-8 text-sm font-semibold md:flex">
-        <a class="hover:text-blue" href="#expertise">Expertise</a>
-        <a class="hover:text-blue" href="#projets">Projets</a>
-        <a class="hover:text-blue" href="#processus">Processus</a>
-        <a class="hover:text-blue" href="#estimation">Estimation IA</a>
-      </div>
-      <a class="rounded-lg bg-ink px-5 py-3 text-sm font-bold text-white transition hover:bg-blue" href="#contact">Soumission</a>
-    </div>
-  </nav>
 
-  <main>
-    <section id="accueil" class="relative flex min-h-[760px] items-center overflow-hidden pt-20">
-      <img class="absolute inset-0 h-full w-full object-cover" alt="Interieur moderne avec murs blancs haut de gamme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaV9aHO4uR-JwCAwsqij_yEX2UCJX7qJQBKcSD3fwTQrARI5EA8kgpYYYpXyaIUI2yCFzB7K_FKbTno3MifBz9VWSkv3RipndpqFzI7uBE1VND3wSQ8TRraUnSu_AQkLtr8pX8j4T4VapGypaAFpomlr7heBoVFXQhVy9k8GH05xBmInL9UBaUzJjU8-ip6wS7mKZqwLyCrW9lcJ7VBTAnKFSY-7m141I3bOnbJoqxZ2IIE3UfhNSsvSlsNa_c6sjBL4Fp6xKsGGTv">
-      <div class="absolute inset-0 bg-black/50"></div>
-      <div class="relative z-10 mx-auto w-full max-w-7xl px-5 py-24 text-white md:px-10">
-        <a href="#estimation" class="mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest backdrop-blur-md">
-          <span class="material-symbols-outlined text-lime">flash_on</span>
-          Nouveau : estimation IA disponible
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+<!-- ════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════ -->
+<header id="navbar" class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/20 shadow-sm transition-all duration-300">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6 flex justify-between items-center h-20">
+    
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2">
+      <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center">
+        <span class="material-symbols-outlined filled text-white text-xl">eco</span>
+      </div>
+      <span class="font-display font-bold text-primary text-xl tracking-tight">Eco<span class="text-secondary">Pure</span></span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#services" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">Services</a>
+      <a href="#resultats" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">Résultats</a>
+      <a href="#temoignages" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">Témoignages</a>
+      <a href="#faq" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">FAQ</a>
+    </nav>
+
+    <!-- CTA + burger -->
+    <div class="flex items-center gap-3">
+      <a href="tel:4505550123" class="hidden md:flex items-center gap-2 text-primary font-medium text-sm hover:underline">
+        <span class="material-symbols-outlined text-base">call</span>(450) 555-0123
+      </a>
+      <a href="#soumission" class="bg-primary text-white px-5 py-2.5 rounded-full font-display font-semibold text-sm hover:bg-primary-container active:scale-95 transition-all">
+        Devis gratuit
+      </a>
+      <!-- Mobile burger -->
+      <button id="burger-btn" class="md:hidden p-2 rounded-lg hover:bg-surface-container" aria-label="Menu">
+        <span class="material-symbols-outlined text-on-surface">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <div id="mobile-menu" class="md:hidden bg-surface border-t border-outline-variant/20">
+    <nav class="flex flex-col p-4 gap-1">
+      <a href="#services" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">Services</a>
+      <a href="#resultats" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">Résultats</a>
+      <a href="#temoignages" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">Témoignages</a>
+      <a href="#faq" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">FAQ</a>
+      <a href="tel:4505550123" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-primary flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">call</span>(450) 555-0123
+      </a>
+    </nav>
+  </div>
+</header>
+
+
+<!-- ════════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════ -->
+<section class="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden pt-20">
+  <!-- Background image -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80" 
+      alt="Entretien ménager professionnel Longueuil"
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 hero-overlay"></div>
+  </div>
+
+  <div class="relative z-10 w-full max-w-[1280px] mx-auto px-4 md:px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+    
+    <!-- Left: Text -->
+    <div class="text-white max-w-xl">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/25 backdrop-blur-sm text-xs font-bold tracking-widest uppercase mb-6">
+        <span class="material-symbols-outlined filled text-secondary-fixed text-base">eco</span>
+        Service écologique certifié · Longueuil
+      </span>
+      <h1 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-6">
+        Femme de ménage à Longueuil,<br/>
+        <span class="text-primary-fixed">fiable et impeccable.</span>
+      </h1>
+      <p class="text-white/85 text-lg md:text-xl leading-relaxed mb-8">
+        L'excellence d'un entretien ménager qui respecte votre santé et l'environnement. Produits certifiés ÉcoLogo, équipe assurée, satisfaction 100% garantie.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#soumission" class="inline-flex items-center justify-center gap-2 bg-white text-primary px-7 py-4 rounded-xl font-display font-bold text-base shadow-lg hover:bg-primary-fixed active:scale-[0.98] transition-all">
+          <span class="material-symbols-outlined text-lg">calculate</span>
+          Soumission gratuite
         </a>
-        <h1 class="max-w-5xl text-4xl font-extrabold leading-tight tracking-tight md:text-7xl">
-          Experts en peinture intérieure, gypse et finition haut de gamme à Montréal
-        </h1>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/82">
-          LuxeFinish redéfinit l'excellence artisanale avec une précision chirurgicale pour vos projets à Montréal, Laval et sur la Rive-Sud.
+        <a href="tel:4505550123" class="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white px-7 py-4 rounded-xl font-display font-bold text-base hover:bg-white/10 active:scale-[0.98] transition-all backdrop-blur-sm">
+          <span class="material-symbols-outlined text-lg">call</span>
+          (450) 555-0123
+        </a>
+      </div>
+      <!-- Trust badges -->
+      <div class="flex flex-wrap gap-4 mt-8">
+        <div class="flex items-center gap-2 text-white/80 text-sm">
+          <span class="material-symbols-outlined filled text-secondary-fixed text-base">verified_user</span> Assurance complète
+        </div>
+        <div class="flex items-center gap-2 text-white/80 text-sm">
+          <span class="material-symbols-outlined filled text-secondary-fixed text-base">star</span> 4.9 · 200+ avis
+        </div>
+        <div class="flex items-center gap-2 text-white/80 text-sm">
+          <span class="material-symbols-outlined filled text-secondary-fixed text-base">thumb_up</span> Satisfaction garantie
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Estimation form (desktop only – mobile shows it further down) -->
+    <div class="hidden lg:block">
+      <div class="bg-white rounded-2xl p-8 shadow-2xl border border-sage-wash/50">
+        <h3 class="font-display font-bold text-2xl text-primary mb-1">Calculez votre prix</h3>
+        <p class="text-on-surface-variant text-sm mb-6">Estimation précise en 30 secondes. Sans engagement.</p>
+        
+        <!-- Inline estimation form (desktop) -->
+        <div class="space-y-5">
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Type de ménage</label>
+            <select id="type-desktop" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary text-sm">
+              <option value="regulier">Entretien régulier</option>
+              <option value="grand">Grand ménage de printemps</option>
+              <option value="renovation">Après rénovation</option>
+              <option value="demenagement">Déménagement (entrée/sortie)</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Chambres</label>
+              <input id="rooms-desktop" type="number" min="1" max="10" value="3" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary text-sm"/>
+            </div>
+            <div>
+              <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Fréquence</label>
+              <select id="freq-desktop" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary text-sm">
+                <option value="hebdo">Hebdomadaire</option>
+                <option value="biweekly">Aux 2 semaines</option>
+                <option value="mensuel">Mensuel</option>
+                <option value="unique">Une seule fois</option>
+              </select>
+            </div>
+          </div>
+          <div id="estimation-preview-desktop" class="hidden bg-sage-wash rounded-xl p-4 text-center">
+            <p class="text-xs text-on-surface-variant mb-1">Estimation approximative</p>
+            <p class="text-3xl font-display font-bold text-primary" id="price-desktop">—</p>
+            <p class="text-xs text-on-surface-variant mt-1" id="price-note-desktop"></p>
+          </div>
+          <button onclick="calculateDesktop()" class="w-full bg-primary text-white py-4 rounded-xl font-display font-bold text-base hover:bg-primary-container active:scale-[0.98] transition-all">
+            Voir mon estimation
+          </button>
+          <p class="text-center text-xs text-on-surface-variant">
+            Ou appelez-nous: <a href="tel:4505550123" class="text-primary font-semibold hover:underline">(450) 555-0123</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     TRUST BAR
+════════════════════════════════════════════ -->
+<section class="bg-sage-wash py-10 border-y border-outline-variant/15">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+      <div class="flex flex-col items-center gap-3 fade-in">
+        <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm">
+          <span class="material-symbols-outlined filled text-primary text-2xl">verified_user</span>
+        </div>
+        <div>
+          <p class="font-display font-bold text-primary">Assurance Complète</p>
+          <p class="text-sm text-on-surface-variant">2 M$ de responsabilité civile</p>
+        </div>
+      </div>
+      <div class="flex flex-col items-center gap-3 fade-in" style="transition-delay: 0.1s">
+        <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm">
+          <span class="material-symbols-outlined filled text-primary text-2xl">eco</span>
+        </div>
+        <div>
+          <p class="font-display font-bold text-primary">Produits Certifiés</p>
+          <p class="text-sm text-on-surface-variant">100% ÉcoLogo, biodégradables</p>
+        </div>
+      </div>
+      <div class="flex flex-col items-center gap-3 fade-in" style="transition-delay: 0.2s">
+        <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm">
+          <span class="material-symbols-outlined filled text-primary text-2xl">stars</span>
+        </div>
+        <div>
+          <p class="font-display font-bold text-primary">Satisfaction 100%</p>
+          <p class="text-sm text-on-surface-variant">On repasse si c'est pas parfait</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     SERVICES SECTION
+════════════════════════════════════════════ -->
+<section id="services" class="py-16 md:py-28">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+    <div class="text-center mb-14 fade-in">
+      <span class="text-xs font-bold tracking-widest text-secondary uppercase">Ce qu'on offre</span>
+      <h2 class="font-display font-bold text-3xl md:text-5xl text-primary mt-2 mb-4">Nos Services Spécialisés</h2>
+      <div class="w-16 h-1 bg-secondary mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Service 1 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow border border-sage-wash/60 fade-in group cursor-pointer" onclick="window.location='services.html#residentiel'">
+        <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">house</span>
+        </div>
+        <h3 class="font-display font-bold text-xl text-primary mb-3">Résidentiel</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Un foyer étincelant avec une approche écologique pour toute la famille.</p>
+        <a href="services.html#residentiel" class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+          En savoir plus <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+      <!-- Service 2 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow border border-sage-wash/60 fade-in group cursor-pointer" style="transition-delay:0.1s" onclick="window.location='services.html#commercial'">
+        <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">business</span>
+        </div>
+        <h3 class="font-display font-bold text-xl text-primary mb-3">Commercial</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Des bureaux sains qui favorisent la productivité et le bien-être au travail.</p>
+        <a href="services.html#commercial" class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+          En savoir plus <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+      <!-- Service 3 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow border border-sage-wash/60 fade-in group cursor-pointer" style="transition-delay:0.2s" onclick="window.location='services.html#grand-menage'">
+        <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">cleaning_services</span>
+        </div>
+        <h3 class="font-display font-bold text-xl text-primary mb-3">Grand Ménage</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Une remise à neuf complète de votre espace, du plafond au plancher.</p>
+        <a href="services.html#grand-menage" class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+          En savoir plus <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+      <!-- Service 4 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow border border-sage-wash/60 fade-in group cursor-pointer" style="transition-delay:0.3s" onclick="window.location='services.html#demenagement'">
+        <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">local_shipping</span>
+        </div>
+        <h3 class="font-display font-bold text-xl text-primary mb-3">Déménagement</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Concentrez-vous sur vos cartons, on s'occupe de la propreté des lieux.</p>
+        <a href="services.html#demenagement" class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+          En savoir plus <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     BEFORE / AFTER SECTION
+════════════════════════════════════════════ -->
+<section id="resultats" class="py-16 md:py-28 bg-surface-container-low overflow-hidden">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <!-- Text side -->
+      <div class="lg:w-1/2 fade-in">
+        <span class="text-xs font-bold tracking-widest text-secondary uppercase">Nos résultats</span>
+        <h2 class="font-display font-bold text-3xl md:text-5xl text-primary mt-2 mb-6">Le résultat Eco Pure</h2>
+        <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+          Nous ne faisons pas que nettoyer. Nous restaurons la brillance naturelle de vos surfaces sans laisser de résidus chimiques nocifs.
         </p>
-        <div class="mt-10 flex flex-wrap gap-4">
-          <a class="rounded-xl bg-white px-7 py-4 font-bold text-ink shadow-lg transition hover:bg-lime" href="#contact">Obtenir une soumission</a>
-          <a class="rounded-xl border border-white/45 px-7 py-4 font-bold text-white backdrop-blur-sm transition hover:bg-white/10" href="#projets">Voir nos réalisations</a>
-          <a class="flex items-center gap-2 rounded-xl bg-blue px-7 py-4 font-bold text-white shadow-glow transition hover:scale-[1.02]" href="#estimation">
-            <span class="material-symbols-outlined">auto_awesome</span>
-            Estimation IA
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+            </div>
+            <span class="font-medium">Élimination des allergènes et poussières fines</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+            </div>
+            <span class="font-medium">Surfaces en inox sans traces de doigts</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+            </div>
+            <span class="font-medium">Salles de bain désinfectées naturellement</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+            </div>
+            <span class="font-medium">Produits sécuritaires pour enfants et animaux</span>
+          </li>
+        </ul>
+        <a href="#soumission" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
+          Obtenez une soumission <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Images side -->
+      <div class="lg:w-1/2 fade-in w-full">
+        <div class="grid grid-cols-2 gap-4 relative">
+          <div class="before-after-container rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80" alt="Salle de bain avant nettoyage" class="w-full h-64 md:h-80 object-cover grayscale"/>
+            <span class="before-label">AVANT</span>
+          </div>
+          <div class="before-after-container rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80" alt="Salle de bain après nettoyage Eco Pure" class="w-full h-64 md:h-80 object-cover"/>
+            <span class="after-label">APRÈS</span>
+          </div>
+        </div>
+        <!-- Floating stat badge -->
+        <div class="hidden md:block absolute -bottom-6 -right-6 bg-tertiary-fixed p-5 rounded-2xl shadow-lg">
+          <p class="font-display font-bold text-3xl text-on-tertiary-fixed">99%</p>
+          <p class="text-sm text-on-tertiary-fixed-variant">Clients récurrents</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════════ -->
+<section id="temoignages" class="py-16 md:py-28">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+    <div class="text-center mb-14 fade-in">
+      <span class="text-xs font-bold tracking-widest text-secondary uppercase">Témoignages</span>
+      <h2 class="font-display font-bold text-3xl md:text-5xl text-primary mt-2">Approuvé par vos voisins</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Testimonial 1 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow fade-in">
+        <div class="flex gap-0.5 mb-4">
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+        </div>
+        <p class="italic text-on-surface leading-relaxed mb-6">
+          "Le service est impeccable à chaque visite. J'apprécie énormément qu'ils utilisent des produits sans odeurs chimiques fortes pour mes enfants."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-secondary-container flex items-center justify-center">
+            <span class="font-display font-bold text-primary">ML</span>
+          </div>
+          <div>
+            <p class="font-bold text-sm">Marie-Eve L.</p>
+            <p class="text-xs text-on-surface-variant">Saint-Hubert, Longueuil</p>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow fade-in" style="transition-delay:0.1s">
+        <div class="flex gap-0.5 mb-4">
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+        </div>
+        <p class="italic text-on-surface leading-relaxed mb-6">
+          "Eco Pure gère nos bureaux depuis 6 mois. La fiabilité de l'équipe et la qualité du nettoyage sont largement supérieures à nos anciens prestataires."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-secondary-container flex items-center justify-center">
+            <span class="font-display font-bold text-primary">JB</span>
+          </div>
+          <div>
+            <p class="font-bold text-sm">Jean-François B.</p>
+            <p class="text-xs text-on-surface-variant">Vieux-Longueuil</p>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow fade-in" style="transition-delay:0.2s">
+        <div class="flex gap-0.5 mb-4">
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+        </div>
+        <p class="italic text-on-surface leading-relaxed mb-6">
+          "Leur grand ménage avant mon déménagement était parfait. La maison sentait bon le propre, sans aucune odeur toxique. Je recommande chaudement!"
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-secondary-container flex items-center justify-center">
+            <span class="font-display font-bold text-primary">SR</span>
+          </div>
+          <div>
+            <p class="font-bold text-sm">Sophie R.</p>
+            <p class="text-xs text-on-surface-variant">Greenfield Park, Longueuil</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     FORMULAIRE SOUMISSION (multi-étapes)
+════════════════════════════════════════════ -->
+<section id="soumission" class="py-16 md:py-28 bg-primary">
+  <div class="max-w-[600px] mx-auto px-4 md:px-6">
+    
+    <!-- Section header -->
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold tracking-widest text-primary-fixed uppercase">Devis en ligne</span>
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-white mt-2 mb-3">Obtenez votre soumission gratuite</h2>
+      <p class="text-white/75">Réponse garantie en moins de 2h en jours ouvrables</p>
+    </div>
+
+    <!-- Form card -->
+    <div class="bg-white rounded-2xl p-7 md:p-10 shadow-2xl">
+      
+      <!-- Progress bar -->
+      <div class="mb-8">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-xs font-bold text-primary" id="step-label">Étape 1 sur 3</span>
+          <span class="text-xs font-bold text-primary" id="step-percent">33%</span>
+        </div>
+        <div class="w-full bg-soft-grey h-2 rounded-full overflow-hidden">
+          <div id="progress-bar" class="bg-primary h-full rounded-full progress-fill" style="width: 33%"></div>
+        </div>
+        <div class="flex justify-between mt-2">
+          <span class="text-xs text-on-surface-variant" id="step-name">Votre ménage</span>
+          <span class="text-xs text-on-surface-variant" id="step-remaining">2 étapes restantes</span>
+        </div>
+      </div>
+
+      <!-- STEP 1: Type & détails -->
+      <div id="step-1" class="step-panel">
+        <h3 class="font-display font-bold text-xl text-primary mb-6">Votre ménage</h3>
+        
+        <div class="space-y-5">
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Type de ménage</label>
+            <select id="form-type" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary">
+              <option value="regulier">Entretien régulier</option>
+              <option value="grand">Grand ménage de printemps</option>
+              <option value="renovation">Après rénovation</option>
+              <option value="demenagement">Déménagement (entrée/sortie)</option>
+              <option value="commercial">Commercial / Bureaux</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-3">Nombre de pièces</label>
+            <div class="grid grid-cols-4 gap-2">
+              <button type="button" class="room-btn border border-outline py-3 rounded-xl text-sm font-bold hover:border-primary transition-all" data-rooms="1-3">1–3</button>
+              <button type="button" class="room-btn border border-outline py-3 rounded-xl text-sm font-bold hover:border-primary transition-all active" data-rooms="4-6">4–6</button>
+              <button type="button" class="room-btn border border-outline py-3 rounded-xl text-sm font-bold hover:border-primary transition-all" data-rooms="7-9">7–9</button>
+              <button type="button" class="room-btn border border-outline py-3 rounded-xl text-sm font-bold hover:border-primary transition-all" data-rooms="10+">10+</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Fréquence souhaitée</label>
+            <select id="form-freq" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary">
+              <option value="hebdo">Chaque semaine</option>
+              <option value="biweekly">Aux deux semaines</option>
+              <option value="mensuel">Une fois par mois</option>
+              <option value="unique">Une seule fois</option>
+            </select>
+          </div>
+        </div>
+
+        <button onclick="goStep(2)" class="w-full bg-primary text-white py-4 rounded-xl font-display font-bold mt-7 hover:bg-primary-container active:scale-[0.98] transition-all">
+          Continuer <span class="material-symbols-outlined align-middle text-base ml-1">arrow_forward</span>
+        </button>
+      </div>
+
+      <!-- STEP 2: Coordonnées -->
+      <div id="step-2" class="step-panel hidden">
+        <h3 class="font-display font-bold text-xl text-primary mb-6">Vos coordonnées</h3>
+        
+        <div class="space-y-5">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Prénom</label>
+              <input id="form-firstname" type="text" placeholder="Sophie" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary placeholder-on-surface-variant/50"/>
+            </div>
+            <div>
+              <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Nom</label>
+              <input id="form-lastname" type="text" placeholder="Leblanc" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary placeholder-on-surface-variant/50"/>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Téléphone</label>
+            <input id="form-phone" type="tel" placeholder="(450) 555-0000" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary placeholder-on-surface-variant/50"/>
+          </div>
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Courriel</label>
+            <input id="form-email" type="email" placeholder="sophie@email.com" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary placeholder-on-surface-variant/50"/>
+          </div>
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Ville / Secteur</label>
+            <select id="form-city" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary">
+              <option>Vieux-Longueuil</option>
+              <option>Saint-Hubert</option>
+              <option>Greenfield Park</option>
+              <option>Brossard</option>
+              <option>Saint-Lambert</option>
+              <option>Autre secteur Rive-Sud</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex gap-3 mt-7">
+          <button onclick="goStep(1)" class="flex-1 border-2 border-outline py-4 rounded-xl font-display font-bold text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+            <span class="material-symbols-outlined align-middle text-base mr-1">arrow_back</span> Retour
+          </button>
+          <button onclick="goStep(3)" class="flex-[2] bg-primary text-white py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
+            Continuer <span class="material-symbols-outlined align-middle text-base ml-1">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Confirmation + estimation -->
+      <div id="step-3" class="step-panel hidden">
+        <h3 class="font-display font-bold text-xl text-primary mb-6">Confirmation & estimation</h3>
+
+        <!-- Summary -->
+        <div class="bg-sage-wash rounded-xl p-5 mb-6">
+          <h4 class="text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-4">Récapitulatif</h4>
+          <div class="space-y-2 text-sm" id="summary-content">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+
+        <!-- Price estimate -->
+        <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 text-center mb-6">
+          <p class="text-xs text-on-surface-variant mb-1">Estimation approximative</p>
+          <p class="text-4xl font-display font-bold text-primary mb-1" id="final-price">—</p>
+          <p class="text-xs text-on-surface-variant" id="final-price-note">par visite</p>
+          <p class="text-xs text-primary/70 mt-2">* Prix confirmé par notre équipe dans les 2h</p>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Notes / Informations supplémentaires</label>
+          <textarea id="form-notes" rows="3" placeholder="Animaux domestiques, accès, préférences particulières..." class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary resize-none placeholder-on-surface-variant/50"></textarea>
+        </div>
+
+        <div class="flex items-start gap-3 mt-4 mb-6">
+          <input type="checkbox" id="form-consent" class="mt-1 w-4 h-4 accent-primary rounded"/>
+          <label for="form-consent" class="text-xs text-on-surface-variant leading-relaxed">
+            J'accepte d'être contacté(e) par Eco Pure pour mon estimation. Je comprends que mes données ne seront pas partagées avec des tiers.
+          </label>
+        </div>
+
+        <div class="flex gap-3">
+          <button onclick="goStep(2)" class="flex-1 border-2 border-outline py-4 rounded-xl font-display font-bold text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+            <span class="material-symbols-outlined align-middle text-base mr-1">arrow_back</span> Retour
+          </button>
+          <button onclick="submitForm()" class="flex-[2] bg-primary text-white py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all" id="submit-btn">
+            Envoyer ma demande <span class="material-symbols-outlined align-middle text-base ml-1">send</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div id="step-success" class="step-panel hidden text-center py-8">
+        <div class="w-20 h-20 rounded-full bg-secondary-container flex items-center justify-center mx-auto mb-6">
+          <span class="material-symbols-outlined filled text-primary text-4xl">check_circle</span>
+        </div>
+        <h3 class="font-display font-bold text-2xl text-primary mb-3">Demande envoyée!</h3>
+        <p class="text-on-surface-variant mb-2">Merci pour votre confiance.</p>
+        <p class="text-on-surface-variant text-sm mb-8">Notre équipe vous contactera dans les <strong class="text-primary">2 heures ouvrables</strong> pour confirmer votre soumission.</p>
+        <a href="tel:4505550123" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container transition-all">
+          <span class="material-symbols-outlined">call</span> Nous appeler
+        </a>
+      </div>
+
+    </div><!-- end form card -->
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     FAQ SECTION
+════════════════════════════════════════════ -->
+<section id="faq" class="py-16 md:py-28 bg-soft-grey">
+  <div class="max-w-[800px] mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 fade-in">
+      <span class="text-xs font-bold tracking-widest text-secondary uppercase">FAQ</span>
+      <h2 class="font-display font-bold text-3xl md:text-5xl text-primary mt-2">Vos questions</h2>
+    </div>
+    <div class="space-y-3">
+      <details class="group bg-white rounded-2xl overflow-hidden shadow-sm fade-in" open>
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+          <span class="font-display font-semibold text-primary">Quels sont vos tarifs à Longueuil?</span>
+          <span class="material-symbols-outlined expand-icon text-on-surface-variant">expand_more</span>
+        </summary>
+        <div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed">
+          Nos prix sont basés sur le type de service, le nombre de pièces et la fréquence. Pour un appartement 4½ à Longueuil, les tarifs débutent à 85$ par visite hebdomadaire. Utilisez notre calculateur ci-dessus pour obtenir une estimation personnalisée.
+        </div>
+      </details>
+      <details class="group bg-white rounded-2xl overflow-hidden shadow-sm fade-in">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+          <span class="font-display font-semibold text-primary">Fournissez-vous les produits de nettoyage?</span>
+          <span class="material-symbols-outlined expand-icon text-on-surface-variant">expand_more</span>
+        </summary>
+        <div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed">
+          Oui! Eco Pure apporte ses propres produits certifiés ÉcoLogo et Green Seal. Tous nos produits sont sans phosphate, biodégradables, et sécuritaires pour les animaux et les enfants.
+        </div>
+      </details>
+      <details class="group bg-white rounded-2xl overflow-hidden shadow-sm fade-in">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+          <span class="font-display font-semibold text-primary">Êtes-vous assurés en cas de bris?</span>
+          <span class="material-symbols-outlined expand-icon text-on-surface-variant">expand_more</span>
+        </summary>
+        <div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed">
+          Absolument. Eco Pure détient une assurance responsabilité civile complète de 2 millions de dollars. Tous nos employés font l'objet d'une vérification rigoureuse des antécédents judiciaires.
+        </div>
+      </details>
+      <details class="group bg-white rounded-2xl overflow-hidden shadow-sm fade-in">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+          <span class="font-display font-semibold text-primary">Quelles zones de la Rive-Sud desservez-vous?</span>
+          <span class="material-symbols-outlined expand-icon text-on-surface-variant">expand_more</span>
+        </summary>
+        <div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed">
+          Nous couvrons Longueuil (Vieux-Longueuil, Saint-Hubert, Greenfield Park), Brossard, Saint-Lambert, LeMoyne et les environs immédiats. Contactez-nous pour vérifier votre secteur spécifique.
+        </div>
+      </details>
+      <details class="group bg-white rounded-2xl overflow-hidden shadow-sm fade-in">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+          <span class="font-display font-semibold text-primary">Que se passe-t-il si je ne suis pas satisfait(e)?</span>
+          <span class="material-symbols-outlined expand-icon text-on-surface-variant">expand_more</span>
+        </summary>
+        <div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed">
+          Nous repassons gratuitement dans les 24h si vous n'êtes pas entièrement satisfait(e). C'est notre engagement de qualité absolue.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer class="bg-primary text-white py-16">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-9 h-9 bg-white/15 rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined filled text-primary-fixed text-xl">eco</span>
+          </div>
+          <span class="font-display font-bold text-xl">Eco<span class="text-primary-fixed">Pure</span></span>
+        </div>
+        <p class="text-white/70 text-sm leading-relaxed mb-5">
+          L'excellence en entretien écologique pour la Rive-Sud. Purifier votre espace, préserver votre santé.
+        </p>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="Facebook">
+            <span class="material-symbols-outlined text-base">language</span>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="Instagram">
+            <span class="material-symbols-outlined text-base">photo_camera</span>
           </a>
         </div>
-        <div class="mt-12 flex flex-wrap items-center gap-5 text-white/85">
-          <div class="flex items-center gap-2">
-            <span class="text-[#FFD700]">★★★★★</span>
-            <strong>5.0</strong>
-          </div>
-          <span class="hidden h-6 w-px bg-white/25 sm:block"></span>
-          <p>500+ projets livrés avec succès</p>
-        </div>
       </div>
-    </section>
 
-    <section id="estimation" class="bg-soft px-5 py-24 md:px-10 md:py-32">
-      <div class="mx-auto max-w-7xl">
-        <div class="mx-auto mb-14 max-w-2xl text-center">
-          <p class="font-mono text-xs font-bold uppercase tracking-[0.22em] text-blue">Technologie propriétaire</p>
-          <h2 class="mt-4 text-3xl font-bold tracking-tight md:text-5xl">Calculateur de finition par IA</h2>
-          <p class="mt-4 text-muted">Déposez une photo et recevez une première estimation instantanée. Un expert confirme ensuite le prix final.</p>
-        </div>
-        <div class="grid items-center gap-8 lg:grid-cols-2">
-          <div class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-black shadow-2xl">
-            <img class="h-full w-full object-cover opacity-70" alt="Analyse de surface de gypse avec interface numerique" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEmQWgudBK0RC6UzoMrlxzfL4e6K2_U9b7Xxrw3LA81YJQPQb5Lvx79ARp2CU0BE1etPmZ9gpaTQPsRVS8AahcgMekRLQXI_MwMB4e-ajfjKLMQfC92HiEeTr-eAAz3082qgWJPgg3BRjyJ1kIIpC-FRlU7Y6n1--vgDz3Q0SsNfbNm0nQ4DQxkl781OksaRkuSLvWWKVQc-hZQnSiPS2f2sEyVW8yNgAs_AxQfB71iAUG4xoMWPB1_LvmLMu8A7ffHbmj4lLVBpSL">
-            <div class="scan-line"></div>
-            <div class="absolute inset-0 flex flex-col justify-between p-5 md:p-8">
-              <div class="flex items-start justify-between gap-4">
-                <div class="rounded-lg border border-lime/30 bg-black/80 px-3 py-2 font-mono text-[10px] text-lime">SCANNING_SURFACE_V4.0</div>
-                <div class="text-right">
-                  <div class="font-mono text-3xl font-bold text-lime">98.4%</div>
-                  <div class="text-[10px] uppercase text-white/65">Confiance</div>
-                </div>
-              </div>
-              <div class="w-full max-w-xs self-end rounded-xl border border-white/10 bg-black/75 p-5 backdrop-blur-xl">
-                <div class="space-y-3 font-mono text-xs text-lime">
-                  <div class="flex justify-between"><span>ZONE:</span><span>MUR_A_OUEST</span></div>
-                  <div class="flex justify-between"><span>SURFACE:</span><span id="surface-output">18.4 m2</span></div>
-                  <div class="flex justify-between"><span>ETAT:</span><span>REPARATION</span></div>
-                  <div class="flex justify-between border-t border-white/10 pt-3"><span>ESTIMATION:</span><span id="price-output">1 420 $ CAD</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-2xl p-6 shadow-lg md:p-10">
-            <label for="photo-upload" class="group flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-muted/45 bg-white/60 p-8 text-center transition hover:border-blue hover:bg-white">
-              <span class="material-symbols-outlined mb-4 text-5xl text-muted group-hover:text-blue">cloud_upload</span>
-              <span class="text-2xl font-bold">Déposez vos photos</span>
-              <span class="mt-2 text-muted">JPG, PNG ou HEIC. L'estimation demo se met a jour automatiquement.</span>
-              <input id="photo-upload" class="sr-only" type="file" accept="image/*" multiple>
-            </label>
-            <div id="estimate-result" class="mt-5 hidden rounded-xl border border-blue/20 bg-white p-5">
-              <p class="font-bold text-blue">Estimation préparée</p>
-              <p class="mt-2 text-sm text-muted" id="estimate-copy"></p>
-              <a class="mt-4 inline-flex rounded-lg bg-ink px-5 py-3 text-sm font-bold text-white hover:bg-blue" href="#contact">Envoyer ma demande</a>
-            </div>
-            <div class="mt-5 grid gap-4 sm:grid-cols-2">
-              <div class="rounded-xl border border-black/10 bg-white p-5">
-                <span class="material-symbols-outlined text-blue">straighten</span>
-                <p class="mt-2 text-xl font-bold">Précis</p>
-                <p class="text-sm text-muted">Calcul de surface pour préparer le devis.</p>
-              </div>
-              <div class="rounded-xl border border-black/10 bg-white p-5">
-                <span class="material-symbols-outlined text-blue">speed</span>
-                <p class="mt-2 text-xl font-bold">Rapide</p>
-                <p class="text-sm text-muted">Première réponse en moins d'une minute.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="expertise" class="bg-white px-5 py-24 md:px-10 md:py-32">
-      <div class="mx-auto max-w-7xl">
-        <div class="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <h2 class="max-w-2xl text-3xl font-bold tracking-tight md:text-5xl">L'art de la finition, maîtrise de A à Z.</h2>
-          <a class="rounded-xl bg-ink px-7 py-4 font-bold text-white hover:bg-blue" href="#contact">Explorer nos services</a>
-        </div>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <article class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-ink shadow-lg">
-            <img class="absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-110 group-hover:grayscale-0" alt="Pose de panneaux de gypse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd4EE2BX4PPzvKyFIjG16_DSPRlbfdspHdwnzjA9m6I_8keek4tl_RHGKY3K75xAHPWyhviYigGjWXY3J8McXPQKFt4DuZqdKWD23TZQOKdNgUaNAJecdcACzaLHa2SNi8QELZYSpjDgxJqMS9ISTd3Zxd6OHKHB9yAUfHOEt3qWxAVTNHVSv_gzS10SREp_mMOj6q7gfF6PdVwgifJ9F2MxHwpv4oXsoulR6gjKzwjHDrG7rZ7glL-oZb4S_Dp2-mEPa83ra0AZna">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-0 p-7 text-white">
-              <span class="material-symbols-outlined text-4xl">architecture</span>
-              <h3 class="mt-3 text-2xl font-bold">Pose de gypse</h3>
-              <p class="mt-2 text-sm text-white/75">Installation précise et durable.</p>
-            </div>
-          </article>
-          <article class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-ink shadow-lg">
-            <img class="absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-110 group-hover:grayscale-0" alt="Tirage de joints professionnel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5iIJRO0d_EFk7-Yg25IM_C2oAuhSl41dfDXgrhDHTTmySwbQ6DwhAp-lzQJjTVIEi8tkoKWcUEEevYHV2SgAfs8YXRtNzYON5wxUZC-kka8W8NuTERcfU992aV7Ylzs21zfdDPd9CRtkViZIQwmB_e5uVSCrUfKMNJ4YCojOC7RxORKGB0MEx7LLewsIglTPfgWBagzxez9yN1N3DqwsxcCYlplDhiio6CKB8DdAz-HhdZnyT05Xv3LGAqDMdL2bRNLT2D88zZp4o">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-0 p-7 text-white">
-              <span class="material-symbols-outlined text-4xl">design_services</span>
-              <h3 class="mt-3 text-2xl font-bold">Tirage de joints</h3>
-              <p class="mt-2 text-sm text-white/75">Niveau 5 pour une planéité impeccable.</p>
-            </div>
-          </article>
-          <article class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-ink shadow-lg">
-            <img class="absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-110 group-hover:grayscale-0" alt="Piece moderne fraichement peinte" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtMdTodufBCbwntM_1N0c3nmd8iPtZvoZPsKk27A8dHwwb5L0J2Ek8mk3WeCRXIpJJGI4dZsBxWjyQiTY68qhuTeaa0H4AszP36PRg2NcoLUjfAZyOHyayXQ5zipMr7pByVSBHgwxV7321CaA_mdlgxYJepkGgX7jKqrmRIC4gh6LfS9G2bY283CR38h-LW-euAcfMNnTHvhKIYGv_Otj9xDGPTTy3YlymY6kFeUtShv-3odWfl37V4CKpoCysoNWqdvGTS-1USYCE">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-0 p-7 text-white">
-              <span class="material-symbols-outlined text-4xl">format_paint</span>
-              <h3 class="mt-3 text-2xl font-bold">Peinture élite</h3>
-              <p class="mt-2 text-sm text-white/75">Fini net, uniforme et durable.</p>
-            </div>
-          </article>
-          <article class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-ink shadow-lg">
-            <img class="absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-110 group-hover:grayscale-0" alt="Reparation de plafond apres degat d'eau" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrECfJEoIBQAxc0UvLVwHWrWsUH8LBHAKnvbmqO0VZCo0uxWoGtTvcj8JjpzF6ziiC-nDI7YEjrP0NlLHQH93c_gAtj86q74apuaL3Gh4qnjNGaqDOcFVT7yao7gpcBdtTfB66_5HgrWr_HzY5ht48pNWX4aXHVAc2nCK3uocc6tQXvKaKdU-HtcjKWg0xMH5DUIGUa_-v8syhbFTnpmLIhUHDIUT8NCxJn7OMKFaera-b91Ez7D_gYe2aiHQfEmlLGI8ZdW5yCG7P">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
-            <div class="absolute bottom-0 p-7 text-white">
-              <span class="material-symbols-outlined text-4xl">water_damage</span>
-              <h3 class="mt-3 text-2xl font-bold">Restauration</h3>
-              <p class="mt-2 text-sm text-white/75">Réparation invisible après fissures ou dégâts d'eau.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projets" class="overflow-hidden bg-ink px-5 py-24 text-white md:px-10 md:py-32">
-      <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
-        <div>
-          <h2 class="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">Avant.<br>Après.<br><span class="text-lime">Invisible.</span></h2>
-          <p class="mt-8 max-w-md text-lg leading-8 text-white/65">Nos techniques de finition dépassent les standards de l'industrie: murs nets, joints invisibles et finitions prêtes pour la lumière réelle.</p>
-          <div class="mt-10 flex gap-10">
-            <div>
-              <div class="text-4xl font-extrabold">12k+</div>
-              <p class="mt-2 text-xs uppercase tracking-widest text-white/45">Mètres carrés finis</p>
-            </div>
-            <div>
-              <div class="text-4xl font-extrabold">0</div>
-              <p class="mt-2 text-xs uppercase tracking-widest text-white/45">Joints visibles</p>
-            </div>
-          </div>
-        </div>
-        <div class="relative h-[540px] overflow-hidden rounded-2xl shadow-2xl">
-          <div class="absolute inset-0 flex">
-            <div class="relative h-full w-1/2 overflow-hidden border-r-2 border-white/50">
-              <img class="absolute left-0 h-full max-w-none object-cover grayscale" alt="Avant travaux de gypse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqw7a01V4NI1EPf5lF9InROuEI1bGfOYNTykBHxeX_6gfXeCcITQ1Q0FV55L-qFvh6tTqSTLGUvnYUJw49yOygSeYywIlTBclHZqrtIoZ-ioK9kAdlDQCDYpefTK8YpXwdTHT5a9_ctDk-9a99X1DQh65zZzmxHVqRgSImJHMCQOFtfDjCkzT5_DI31R4kb9wc0ayaPzgKczOMJqay9Re29mg15rW0deTLgRTaRNWveFSvimcFzFoJeDdvBgEq519dRRcCwV_By0V8">
-              <span class="absolute left-5 top-5 rounded-lg bg-black/60 px-4 py-2 font-mono text-xs">AVANT</span>
-            </div>
-            <div class="relative h-full w-1/2 overflow-hidden">
-              <img class="absolute right-0 h-full max-w-none object-cover" alt="Apres finition haut de gamme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-CSCxkzUCbsFZE2UjFzMJzU8Bf6ndsKs-fW0tNclMcuhzALi14nJCFjLiLyhq3cOTeFTkIZRzC07F130ans2UAdx1hIGaGuAIbipSLAF5o0m3WtlYWspkBB5Q6MeSvbS3geBDZbCHLLe23wB7rXePPVmhpbCv8JyhefvViiUFd8lezVjt1noO8R8lkvktRV80FIZcOtX8ddqES95MHn0c_AFgQUxWQfy5HpyKrPH3I38aYazOwCuI3qRxUmMUC2sVqxtrbulzFuvU">
-              <span class="absolute right-5 top-5 rounded-lg bg-blue px-4 py-2 font-mono text-xs">APRES</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="processus" class="bg-white px-5 py-24 md:px-10 md:py-32">
-      <div class="mx-auto max-w-7xl text-center">
-        <h2 class="text-3xl font-bold tracking-tight md:text-5xl">Un parcours digital, un fini tangible.</h2>
-        <div class="mt-14 grid gap-8 md:grid-cols-4">
-          <div class="flex flex-col items-center">
-            <div class="flex h-20 w-20 items-center justify-center rounded-full border border-black/15 bg-white"><span class="material-symbols-outlined text-3xl">photo_camera</span></div>
-            <h3 class="mt-5 text-xl font-bold">1. Capturer</h3>
-            <p class="mt-2 text-sm text-muted">Photographiez vos murs.</p>
-          </div>
-          <div class="flex flex-col items-center">
-            <div class="flex h-20 w-20 items-center justify-center rounded-full border border-black/15 bg-white"><span class="material-symbols-outlined text-3xl">auto_awesome</span></div>
-            <h3 class="mt-5 text-xl font-bold">2. Analyser</h3>
-            <p class="mt-2 text-sm text-muted">L'IA prépare une estimation.</p>
-          </div>
-          <div class="flex flex-col items-center">
-            <div class="flex h-20 w-20 items-center justify-center rounded-full border border-black/15 bg-white"><span class="material-symbols-outlined text-3xl">verified</span></div>
-            <h3 class="mt-5 text-xl font-bold">3. Valider</h3>
-            <p class="mt-2 text-sm text-muted">Confirmation par expert.</p>
-          </div>
-          <div class="flex flex-col items-center">
-            <div class="flex h-20 w-20 items-center justify-center rounded-full border border-black/15 bg-white"><span class="material-symbols-outlined text-3xl">brush</span></div>
-            <h3 class="mt-5 text-xl font-bold">4. Transformer</h3>
-            <p class="mt-2 text-sm text-muted">Réalisation impeccable.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-soft px-5 py-24 md:px-10 md:py-32">
-      <div class="mx-auto max-w-7xl">
-        <h2 class="mb-10 text-3xl font-bold tracking-tight md:text-5xl">Paroles de propriétaires.</h2>
-        <div class="grid gap-6 md:grid-cols-3">
-          <article class="rounded-2xl bg-white p-7 shadow-sm">
-            <p class="text-[#d8a300]">★★★★★</p>
-            <p class="mt-4 italic">"Le prix final était exactement celui annoncé. La finition à Westmount est parfaite."</p>
-            <p class="mt-6 font-bold">Jean-Philippe R.</p>
-            <p class="text-sm text-muted">Westmount, QC</p>
-          </article>
-          <article class="rounded-2xl bg-white p-7 shadow-sm">
-            <p class="text-[#d8a300]">★★★★★</p>
-            <p class="mt-4 italic">"Les joints sont littéralement invisibles même sous la lumière des grandes fenêtres."</p>
-            <p class="mt-6 font-bold">Marie-Eve G.</p>
-            <p class="text-sm text-muted">Montréal, QC</p>
-          </article>
-          <article class="rounded-2xl bg-white p-7 shadow-sm">
-            <p class="text-[#d8a300]">★★★★★</p>
-            <p class="mt-4 italic">"Réactifs, professionnels et d'une propreté rare. Notre rénovation a été impeccable."</p>
-            <p class="mt-6 font-bold">David K.</p>
-            <p class="text-sm text-muted">Brossard, QC</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-white px-5 py-24 md:px-10 md:py-32">
-      <div class="mx-auto grid max-w-7xl gap-8 border-t border-black/10 pt-16 lg:grid-cols-2">
-        <div>
-          <h2 class="text-3xl font-bold tracking-tight md:text-5xl">Peinture intérieure et réparation de gypse à Montréal</h2>
-          <p class="mt-6 text-lg leading-8 text-muted">Depuis plus de 10 ans, LuxeFinish s'impose comme une référence en finition haut de gamme. Architectes, entrepreneurs et propriétaires profitent d'une équipe minutieuse, transparente et ponctuelle.</p>
-        </div>
-        <div class="rounded-2xl bg-soft p-8">
-          <h3 class="text-2xl font-bold">Zones de service premium</h3>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <span class="rounded-lg bg-white px-5 py-3 font-semibold">Montréal</span>
-            <span class="rounded-lg bg-white px-5 py-3 font-semibold">Westmount</span>
-            <span class="rounded-lg bg-white px-5 py-3 font-semibold">Laval</span>
-            <span class="rounded-lg bg-white px-5 py-3 font-semibold">Brossard</span>
-            <span class="rounded-lg bg-white px-5 py-3 font-semibold">Longueuil</span>
-            <span class="rounded-lg bg-white px-5 py-3 font-semibold">Rive-Sud</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="relative overflow-hidden bg-ink px-5 py-24 text-white md:px-10 md:py-32">
-      <img class="absolute right-0 top-0 h-full w-1/2 object-cover opacity-10" alt="Texture de mur fini" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvqjXbuTYW4Le3VYwMb9KLpWATsoNVHSE3jdMulvBQvA99p0arJCIY1HDRT-_7TWU0vljlBFbYLEhZ3EeIT6V5sFxP3A32XjIjakFF2DlZitlJ5VwlLbWPjq4rmJalomLjkD6e7332T8OAce1AsDIfF5Ff-da4QGItFP6Z9zs2l6TjrjDApyNWqdCEEQlEhJTSR9GLl70Wkvqx1HCqb24__KJDDrzHAVTKSWtOwFOAxC1IVqfs3xRtrG-SYDNP8Qj9kxtDdg9lywbz">
-      <div class="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
-        <div>
-          <h2 class="text-4xl font-extrabold leading-tight tracking-tight md:text-7xl">Prêt à transformer votre intérieur ?</h2>
-          <p class="mt-6 max-w-xl text-lg leading-8 text-white/65">Prenez rendez-vous avec un consultant ou utilisez l'outil IA pour préparer une première estimation.</p>
-          <a class="mt-10 inline-flex items-center gap-3 rounded-xl bg-blue px-8 py-5 text-lg font-bold text-white shadow-glow hover:scale-[1.02]" href="#estimation">
-            <span class="material-symbols-outlined">auto_awesome</span>
-            Estimation IA gratuite
-          </a>
-        </div>
-        <div class="glass-card rounded-2xl border-white/10 bg-white/10 p-6 md:p-9">
-          <h3 class="mb-7 text-2xl font-bold text-white">Contactez nos experts</h3>
-          <form id="contact-form" class="space-y-5">
-            <div>
-              <label class="mb-2 block text-xs font-bold uppercase tracking-widest text-white/50" for="name">Nom complet</label>
-              <input id="name" name="name" required class="w-full rounded-lg border-0 border-b-2 border-white/20 bg-white/5 p-4 text-white placeholder:text-white/30 focus:border-blue focus:ring-0" placeholder="Jean Tremblay" type="text">
-            </div>
-            <div>
-              <label class="mb-2 block text-xs font-bold uppercase tracking-widest text-white/50" for="email">Email</label>
-              <input id="email" name="email" required class="w-full rounded-lg border-0 border-b-2 border-white/20 bg-white/5 p-4 text-white placeholder:text-white/30 focus:border-blue focus:ring-0" placeholder="jean@exemple.ca" type="email">
-            </div>
-            <div>
-              <label class="mb-2 block text-xs font-bold uppercase tracking-widest text-white/50" for="project">Votre projet</label>
-              <textarea id="project" name="project" required class="w-full rounded-lg border-0 border-b-2 border-white/20 bg-white/5 p-4 text-white placeholder:text-white/30 focus:border-blue focus:ring-0" placeholder="Décrivez brièvement vos besoins..." rows="4"></textarea>
-            </div>
-            <button class="w-full rounded-xl bg-white py-5 font-bold text-ink transition hover:bg-lime" type="submit">Envoyer ma demande</button>
-            <p id="form-status" class="hidden rounded-lg bg-white/10 p-4 text-sm text-white/80"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="bg-white px-5 py-16 md:px-10">
-    <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
+      <!-- Services -->
       <div>
-        <div class="text-2xl font-extrabold">LuxeFinish</div>
-        <p class="mt-5 text-sm leading-6 text-muted">Technologies de finition haute-précision. La rencontre de l'artisanat et de l'intelligence artificielle.</p>
-      </div>
-      <div>
-        <h4 class="font-bold">Services</h4>
-        <ul class="mt-5 space-y-3 text-muted">
-          <li><a class="hover:text-blue" href="#expertise">Peinture intérieure</a></li>
-          <li><a class="hover:text-blue" href="#expertise">Tirage de joints</a></li>
-          <li><a class="hover:text-blue" href="#expertise">Pose de gypse</a></li>
+        <h4 class="font-display font-bold mb-5">Services</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a href="services.html#residentiel" class="hover:text-white transition-colors">Nettoyage Résidentiel</a></li>
+          <li><a href="services.html#commercial" class="hover:text-white transition-colors">Bureaux & Commerces</a></li>
+          <li><a href="services.html#grand-menage" class="hover:text-white transition-colors">Grand Ménage de Printemps</a></li>
+          <li><a href="services.html#demenagement" class="hover:text-white transition-colors">Entrée/Sortie Logement</a></li>
+          <li><a href="services.html#renovation" class="hover:text-white transition-colors">Après Construction/Rénovation</a></li>
         </ul>
       </div>
+
+      <!-- Contact -->
       <div>
-        <h4 class="font-bold">Société</h4>
-        <ul class="mt-5 space-y-3 text-muted">
-          <li><a class="hover:text-blue" href="#projets">Portfolio</a></li>
-          <li><a class="hover:text-blue" href="#estimation">Estimation IA</a></li>
-          <li><a class="hover:text-blue" href="#contact">Contact</a></li>
+        <h4 class="font-display font-bold mb-5">Contact Longueuil</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-fixed text-base flex-shrink-0 mt-0.5">location_on</span>
+            <span>Longueuil (Vieux-Longueuil, Saint-Hubert, Greenfield Park)</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary-fixed text-base">call</span>
+            <a href="tel:4505550123" class="hover:text-white transition-colors">(450) 555-0123</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary-fixed text-base">mail</span>
+            <a href="mailto:bonjour@ecopure.ca" class="hover:text-white transition-colors">bonjour@ecopure.ca</a>
+          </li>
         </ul>
       </div>
+
+      <!-- Liens -->
       <div>
-        <h4 class="font-bold">Région</h4>
-        <ul class="mt-5 space-y-3 text-muted">
-          <li>Montréal, QC</li>
-          <li>Laval & Rive-Nord</li>
-          <li>Longueuil & Rive-Sud</li>
+        <h4 class="font-display font-bold mb-5">Liens Rapides</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a href="index.html" class="hover:text-white transition-colors">Accueil</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Nos Services</a></li>
+          <li><a href="#temoignages" class="hover:text-white transition-colors">Témoignages</a></li>
+          <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="#soumission" class="hover:text-white transition-colors">Devis gratuit</a></li>
         </ul>
       </div>
     </div>
-    <div class="mx-auto mt-12 flex max-w-7xl flex-col justify-between gap-4 border-t border-black/10 pt-8 text-sm text-muted md:flex-row">
-      <p>© 2026 LuxeFinish. Technologies de Finition Haute-Précision.</p>
+
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+      <p>© 2024 Eco Pure Longueuil. Tous droits réservés.</p>
       <div class="flex gap-6">
-        <a href="#contact">Confidentialité</a>
-        <a href="#contact">Conditions</a>
+        <a href="#" class="hover:text-white transition-colors">Politique de confidentialité</a>
+        <a href="#" class="hover:text-white transition-colors">Mentions légales</a>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-    const upload = document.querySelector("#photo-upload");
-    const result = document.querySelector("#estimate-result");
-    const copy = document.querySelector("#estimate-copy");
-    const surfaceOutput = document.querySelector("#surface-output");
-    const priceOutput = document.querySelector("#price-output");
 
-    upload.addEventListener("change", () => {
-      const count = upload.files.length || 1;
-      const surface = 12 + count * 6.4;
-      const price = Math.round(surface * 78);
-      surfaceOutput.textContent = `${surface.toFixed(1)} m2`;
-      priceOutput.textContent = `${price.toLocaleString("fr-CA")} $ CAD`;
-      copy.textContent = `${count} photo(s) reçue(s). Estimation préliminaire: ${price.toLocaleString("fr-CA")} $ CAD pour environ ${surface.toFixed(1)} m2.`;
-      result.classList.remove("hidden");
+<!-- ════════════════════════════════════════════
+     FAB (mobile phone button)
+════════════════════════════════════════════ -->
+<div class="fixed bottom-6 right-6 z-40 md:hidden">
+  <a href="tel:4505550123" class="relative w-16 h-16 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-2xl active:scale-90 transition-transform fab-pulse" aria-label="Appeler Eco Pure">
+    <span class="material-symbols-outlined text-3xl relative z-10">call</span>
+  </a>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     TOAST NOTIFICATION
+════════════════════════════════════════════ -->
+<div id="toast" class="fixed bottom-24 right-4 z-50 bg-charcoal text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 text-sm font-medium">
+  <span class="material-symbols-outlined filled text-secondary-fixed">check_circle</span>
+  <span id="toast-msg">Action réussie</span>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+<script>
+  // ── Mobile burger menu ──────────────────────
+  const burgerBtn = document.getElementById('burger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  burgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    const icon = burgerBtn.querySelector('.material-symbols-outlined');
+    icon.textContent = mobileMenu.classList.contains('open') ? 'close' : 'menu';
+  });
+
+  // Close menu on nav link click
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burgerBtn.querySelector('.material-symbols-outlined').textContent = 'menu';
+    });
+  });
+
+
+  // ── Navbar scroll behavior ──────────────────
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('shadow-md');
+    } else {
+      navbar.classList.remove('shadow-md');
+    }
+  });
+
+
+  // ── Scroll fade-in animation ─────────────────
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+        observer.unobserve(el.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  fadeEls.forEach(el => observer.observe(el));
+
+
+  // ── Room selector buttons ─────────────────────
+  let selectedRooms = '4-6';
+  document.querySelectorAll('.room-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.room-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedRooms = btn.dataset.rooms;
+    });
+  });
+
+
+  // ── Pricing calculator ────────────────────────
+  const PRICES = {
+    regulier:     { '1-3': 75,  '4-6': 105, '7-9': 145, '10+': 195 },
+    grand:        { '1-3': 200, '4-6': 280, '7-9': 380, '10+': 480 },
+    renovation:   { '1-3': 250, '4-6': 350, '7-9': 480, '10+': 600 },
+    demenagement: { '1-3': 180, '4-6': 250, '7-9': 340, '10+': 440 },
+    commercial:   { '1-3': 120, '4-6': 180, '7-9': 260, '10+': 360 },
+  };
+  const FREQ_DISCOUNT = {
+    hebdo: 0.85, biweekly: 0.90, mensuel: 0.95, unique: 1.0
+  };
+  const FREQ_LABELS = {
+    hebdo: '/semaine', biweekly: '/2 semaines', mensuel: '/mois', unique: '(service unique)'
+  };
+
+  function getPrice(type, rooms, freq) {
+    const base = PRICES[type]?.[rooms] ?? 120;
+    const disc = FREQ_DISCOUNT[freq] ?? 1;
+    const isRecurring = freq !== 'unique';
+    return {
+      price: Math.round(base * disc),
+      label: FREQ_LABELS[freq] ?? '',
+      isRecurring
+    };
+  }
+
+  function calculateDesktop() {
+    const type = document.getElementById('type-desktop').value;
+    const rooms = document.getElementById('rooms-desktop').value;
+    const freq = document.getElementById('freq-desktop').value;
+
+    // Map rooms number to bracket
+    const r = parseInt(rooms);
+    let bracket = '1-3';
+    if (r >= 4 && r <= 6) bracket = '4-6';
+    else if (r >= 7 && r <= 9) bracket = '7-9';
+    else if (r >= 10) bracket = '10+';
+
+    const { price, label, isRecurring } = getPrice(type, bracket, freq);
+    
+    document.getElementById('price-desktop').textContent = price + '$';
+    document.getElementById('price-note-desktop').textContent = label + (isRecurring ? ' · tarif récurrent' : '');
+    document.getElementById('estimation-preview-desktop').classList.remove('hidden');
+  }
+
+  // Live update desktop form on change
+  ['type-desktop','rooms-desktop','freq-desktop'].forEach(id => {
+    document.getElementById(id)?.addEventListener('change', () => {
+      if (!document.getElementById('estimation-preview-desktop').classList.contains('hidden')) {
+        calculateDesktop();
+      }
+    });
+  });
+
+
+  // ── Multi-step form ───────────────────────────
+  const steps = ['step-1', 'step-2', 'step-3', 'step-success'];
+  const stepConfig = [
+    { label: 'Étape 1 sur 3', percent: '33%', width: '33%', name: 'Votre ménage', remaining: '2 étapes restantes' },
+    { label: 'Étape 2 sur 3', percent: '66%', width: '66%', name: 'Vos coordonnées', remaining: '1 étape restante' },
+    { label: 'Étape 3 sur 3', percent: '100%', width: '100%', name: 'Confirmation', remaining: 'Dernière étape' },
+  ];
+
+  let currentStep = 1;
+
+  function goStep(n) {
+    if (n === 2 && !validateStep1()) return;
+    if (n === 3 && !validateStep2()) return;
+    if (n === 3) buildSummary();
+
+    // Hide all panels
+    steps.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.add('hidden');
     });
 
-    document.querySelector("#contact-form").addEventListener("submit", (event) => {
-      event.preventDefault();
-      const data = new FormData(event.currentTarget);
-      const name = data.get("name");
-      const email = data.get("email");
-      const project = data.get("project");
-      const subject = encodeURIComponent(`Demande de soumission - ${name}`);
-      const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nProjet:\n${project}`);
-      const status = document.querySelector("#form-status");
-      status.textContent = "Merci. Votre application courriel va s'ouvrir pour envoyer la demande à LuxeFinish.";
-      status.classList.remove("hidden");
-      window.location.href = `mailto:contact@luxefinish.ca?subject=${subject}&body=${body}`;
-      event.currentTarget.reset();
-    });
-  </script>
+    // Show target panel
+    const targetId = n <= 3 ? `step-${n}` : 'step-success';
+    document.getElementById(targetId)?.classList.remove('hidden');
+
+    // Update progress
+    if (n <= 3) {
+      const cfg = stepConfig[n - 1];
+      document.getElementById('step-label').textContent = cfg.label;
+      document.getElementById('step-percent').textContent = cfg.percent;
+      document.getElementById('progress-bar').style.width = cfg.width;
+      document.getElementById('step-name').textContent = cfg.name;
+      document.getElementById('step-remaining').textContent = cfg.remaining;
+    }
+
+    currentStep = n;
+
+    // Scroll form into view on mobile
+    document.getElementById('soumission').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function validateStep1() {
+    // Basic — rooms selected already by default
+    return true;
+  }
+
+  function validateStep2() {
+    const phone = document.getElementById('form-phone').value.trim();
+    const email = document.getElementById('form-email').value.trim();
+    const fname = document.getElementById('form-firstname').value.trim();
+    if (!fname) { showToast('Veuillez entrer votre prénom'); return false; }
+    if (!phone && !email) { showToast('Téléphone ou courriel requis'); return false; }
+    return true;
+  }
+
+  function buildSummary() {
+    const type = document.getElementById('form-type');
+    const freq = document.getElementById('form-freq');
+    const fname = document.getElementById('form-firstname').value;
+    const lname = document.getElementById('form-lastname').value;
+    const city = document.getElementById('form-city').value;
+
+    const typeText = type.options[type.selectedIndex].text;
+    const freqText = freq.options[freq.selectedIndex].text;
+
+    const summaryEl = document.getElementById('summary-content');
+    summaryEl.innerHTML = `
+      <div class="flex justify-between"><span class="text-on-surface-variant">Nom</span><span class="font-medium">${fname} ${lname}</span></div>
+      <div class="flex justify-between"><span class="text-on-surface-variant">Service</span><span class="font-medium">${typeText}</span></div>
+      <div class="flex justify-between"><span class="text-on-surface-variant">Pièces</span><span class="font-medium">${selectedRooms}</span></div>
+      <div class="flex justify-between"><span class="text-on-surface-variant">Fréquence</span><span class="font-medium">${freqText}</span></div>
+      <div class="flex justify-between"><span class="text-on-surface-variant">Secteur</span><span class="font-medium">${city}</span></div>
+    `;
+
+    // Calculate price
+    const typeVal = document.getElementById('form-type').value;
+    const freqVal = document.getElementById('form-freq').value;
+    const { price, label } = getPrice(typeVal, selectedRooms, freqVal);
+    document.getElementById('final-price').textContent = price + '$';
+    document.getElementById('final-price-note').textContent = label;
+  }
+
+  function submitForm() {
+    const consent = document.getElementById('form-consent');
+    if (!consent.checked) {
+      showToast('Veuillez accepter les conditions');
+      return;
+    }
+
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Envoi en cours...';
+    btn.disabled = true;
+
+    // Simulate API call
+    setTimeout(() => {
+      goStep(4);
+    }, 1200);
+  }
+
+
+  // ── Toast notification ────────────────────────
+  function showToast(msg, duration = 3000) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toast-msg').textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), duration);
+  }
+</script>
+
 </body>
 </html>
