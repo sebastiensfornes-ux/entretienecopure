@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="description" content="LuxeFinish offre des services de peinture interieure, pose de gypse, tirage de joints et finition haut de gamme a Montreal, Laval et sur la Rive-Sud.">
+  <title>LuxeFinish | Peinture, gypse et finition haut de gamme a Montreal</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#101112",
+            paper: "#f8f8f6",
+            lime: "#c3f400",
+            blue: "#0058bc",
+            soft: "#eeeeee",
+            muted: "#666b6f"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          },
+          boxShadow: {
+            glow: "0 0 28px rgba(0, 88, 188, 0.35)"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.74);
+      backdrop-filter: blur(28px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .scan-line {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #c3f400, transparent);
+      position: absolute;
+      width: 100%;
+      top: 0;
+      animation: scan 3s infinite linear;
+    }
+
+    @keyframes scan {
+      0% { top: 0%; opacity: 0; }
+      10%, 90% { opacity: 1; }
+      100% { top: 100%; opacity: 0; }
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+  </style>
+</head>
+<body class="bg-paper text-ink font-sans">
+  <nav class="fixed top-0 z-50 w-full border-b border-white/25 bg-white/80 shadow-sm backdrop-blur-xl">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-10">
+      <a class="text-2xl font-extrabold tracking-tight" href="#accueil" aria-label="Retour a l'accueil">LuxeFinish</a>
+      <div class="hidden items-center gap-8 text-sm font-semibold md:flex">
+        <a class="hover:text-blue" href="#expertise">Expertise</a>
+        <a class="hover:text-blue" href="#projets">Projets</a>
+        <a class="hover:text-blue" href="#processus">Processus</a>
+        <a class="hover:text-blue" href="#estimation">Estimation IA</a>
+      </div>
+      <a class="rounded-lg bg-ink px-5 py-3 text-sm font-bold text-white transition hover:bg-blue" href="#contact">Soumission</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="accueil" class="relative flex min-h-[760px] items-center overflow-hidden pt-20">
+      <img class="absolute inset-0 h-full w-full object-cover" alt="Interieur moderne avec murs blancs haut de gamme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaV9aHO4uR-JwCAwsqij_yEX2UCJX7qJQBKcSD3fwTQrARI5EA8kgpYYYpXyaIUI2yCFzB7K_FKbTno3MifBz9VWSkv3RipndpqFzI7uBE1VND3wSQ8TRraUnSu_AQkLtr8pX8j4T4VapGypaAFpomlr7heBoVFXQhVy9k8GH05xBmInL9UBaUzJjU8-ip6wS7mKZqwLyCrW9lcJ7VBTAnKFSY-7m141I3bOnbJoqxZ2IIE3UfhNSsvSlsNa_c6sjBL4Fp6xKsGGTv">
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="relative z-10 mx-auto w-full max-w-7xl px-5 py-24 text-white md:px-10">
+        <a href="#estimation" class="mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest backdrop-blur-md">
+          <span class="material-symbols-outlined text-lime">flash_on</span>
+          Nouveau : estimation IA disponible
+        </a>
+        <h1 class="max-w-5xl text-4xl font-extrabold leading-tight tracking-tight md:text-7xl">
+          Experts en peinture intérieure, gypse et finition haut de gamme à Montréal
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/82">
+          LuxeFinish redéfinit l'excellence artisanale avec une précision chirurgicale pour vos projets à Montréal, Laval et sur la Rive-Sud.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a class="rounded-xl bg-white px-7 py-4 font-bold text-ink shadow-lg transition hover:bg-lime" href="#contact">Obtenir une soumission</a>
+          <a class="rounded-xl border border-white/45 px-7 py-4 font-bold text-white backdrop-blur-sm transition hover:bg-white/10" href="#projets">Voir nos réalisations</a>
+          <a class="flex items-center gap-2 rounded-xl bg-blue px-7 py-4 font-bold text-white shadow-glow transition hover:scale-[1.02]" href="#estimation">
+            <span class="material-symbols-outlined">auto_awesome</span>
+            Estimation IA
+          </a>
+        </div>
+        <div class="mt-12 flex flex-wrap items-center gap-5 text-white/85">
+          <div class="flex items-center gap-2">
+            <span class="text-[#FFD700]">★★★★★</span>
+            <strong>5.0</strong>
+          </div>
+          <span class="hidden h-6 w-px bg-white/25 sm:block"></span>
+          <p>500+ projets livrés avec succès</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="estimation" class="bg-soft px-5 py-24 md:px-10 md:py-32">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto mb-14 max-w-2xl text-center">
+          <p class="font-mono text-xs font-bold uppercase tracking-[0.22em] text-blue">Technologie propriétaire</p>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight md:text-5xl">Calculateur de finition par IA</h2>
+          <p class="mt-4 text-muted">Déposez une photo et recevez une première estimation instantanée. Un expert confirme ensuite le prix final.</p>
+        </div>
+        <div class="grid items-center gap-8 lg:grid-cols-2">
+          <div class="relative aspect-[4/3] overflow-hidden rounded-2xl bg-black shadow-2xl">
+            <img class="h-full w-full object-cover opacity-70" alt="Analyse de surface de gypse avec interface numerique" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEmQWgudBK0RC6UzoMrlxzfL4e6K2_U9b7Xxrw3LA81YJQPQb5Lvx79ARp2CU0BE1etPmZ9gpaTQPsRVS8AahcgMekRLQXI_MwMB4e-ajfjKLMQfC92HiEeTr-eAAz3082qgWJPgg3BRjyJ1kIIpC-FRlU7Y6n1--vgDz3Q0SsNfbNm0nQ4DQxkl781OksaRkuSLvWWKVQc-hZQnSiPS2f2sEyVW8yNgAs_AxQfB71iAUG4xoMWPB1_LvmLMu8A7ffHbmj4lLVBpSL">
+            <div class="scan-line"></div>
+            <div class="absolute inset-0 flex flex-col justify-between p-5 md:p-8">
+              <div class="flex items-start justify-between gap-4">
+                <div class="rounded-lg border border-lime/30 bg-black/80 px-3 py-2 font-mono text-[10px] text-lime">SCANNING_SURFACE_V4.0</div>
+                <div class="text-right">
+                  <div class="font-mono text-3xl font-bold text-lime">98.4%</div>
+                  <div class="text-[10px] uppercase text-white/65">Confiance</div>
+                </div>
+              </div>
+              <div class="w-full max-w-xs self-end rounded-xl border border-white/10 bg-black/75 p-5 backdrop-blur-xl">
+                <div class="space-y-3 font-mono text-xs text-lime">
+                  <div class="flex justify-between"><span>ZONE:</span><span>MUR_A_OUEST</span></div>
+                  <div class="flex justify-between"><span>SURFACE:</span><span id="surface-output">18.4 m2</span></div>
+                  <div class="flex justify-between"><span>ETAT:</span><span>REPARATION</span></div>
+                  <div class="flex justify-between border-t border-white/10 pt-3"><span>ESTIMATION:</span><span id="price-output">1 420 $ CAD</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 shadow-lg md:p-10">
+            <label for="photo-upload" class="group flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-muted/45 bg-white/60 p-8 text-center transition hover:border-blue hover:bg-white">
+              <span class="material-symbols-outlined mb-4 text-5xl text-muted group-hover:text-blue">cloud_upload</span>
+              <span class="text-2xl font-bold">Déposez vos photos</span>
+              <span class="mt-2 text-muted">JPG, PNG ou HEIC. L'estimation demo se met a jour automatiquement.</span>
+              <input id="photo-upload" class="sr-only" type="file" accept="image/*" multiple>
+            </label>
+            <div id="estimate-result" class="mt-5 hidden rounded-xl border border-blue/20 bg-white p-5">
+              <p class="font-bold text-blue">Estimation préparée</p>
+              <p class="mt-2 text-sm text-muted" id="estimate-copy"></p>
+              <a class="mt-4 inline-flex rounded-lg bg-ink px-5 py-3 text-sm font-bold text-white hover:bg-blue" href="#contact">Envoyer ma demande</a>
+            </div>
+            <div class="mt-5 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-xl border border-black/10 bg-white p-5">
+                <span class="material-symbols-outlined text-blue">straighten</span>
+                <p class="mt-2 text-xl font-bold">Précis</p>
+                <p class="text-sm text-muted">Calcul de surface pour préparer le devis.</p>
+              </div>
+              <div class="rounded-xl border border-black/10 bg-white p-5">
+                <span class="material-symbols-outlined text-blue">speed</span>
+                <p class="mt-2 text-xl font-bold">Rapide</p>
+                <p class="text-sm text-muted">Première réponse en moins d'une minute.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise" class="bg-white px-5 py-24 md:px-10 md:py-32">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <h2 class="max-w-2xl text-3xl font-bold tracking-tight md:text-5xl">L'art de la finition, maîtrise de A à Z.</h2>
+          <a class="rounded-xl bg-ink px-7 py-4 font-bold text-white hover:bg-blue" href="#contact">Explorer nos services</a>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <article class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-ink shadow-lg">
+            <img class="absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-110 group-hover:grayscale-0" alt="Pose de panneaux de gypse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd4EE2BX4PPzvKyFIjG16_DSPRlbfdspHdwnzjA9m6I_8keek4tl_RHGKY3K75xAHPWyhviYigGjWXY3J8McXPQKFt4DuZqdKWD23TZQOKdNgUaNAJecdcACzaLHa2SNi8QELZYSpjDgxJqMS9ISTd3Zxd6OHKHB9yAUfHOEt3qWxAVTNHVSv_gzS10SREp_mMOj6q7gfF6PdVwgifJ9F2MxHwpv4oXsoulR6gjKzwjHDrG7rZ7glL-oZb4S_Dp2-mEPa83ra0AZna">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 p-7 text-white">
+              <span class="material-symbols-outlined text-4xl">architecture</span>
+              <h3 class="mt-3 text-2xl font-bold">Pose de gypse</h3>
+              <p class="mt-2 text-sm text-white/75">Installation précise et durable.</p>
+            </div>
+          </article>
+          <article class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-ink shadow-lg">
+            <img class="absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-110 group-hover:grayscale-0" alt="Tirage de joints professionnel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5iIJRO0d_EFk7-Yg25IM_C2oAuhSl41dfDXgrhDHTTmySwbQ6DwhAp-lzQJjTVIEi8tkoKWcUEEevYHV2SgAfs8YXRtNzYON5wxUZC-kka8W8NuTERcfU992aV7Ylzs21zfdDPd9CRtkViZIQwmB_e5uVSCrUfKMNJ4YCojOC7RxORKGB0MEx7LLewsIglTPfgWBagzxez9yN1N3DqwsxcCYlplDhiio6CKB8DdAz-HhdZnyT05Xv3LGAqDMdL2bRNLT2D88zZp4o">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 p-7 text-white">
+              <span class="material-symbols-outlined text-4xl">design_services</span>
+              <h3 class="mt-3 text-2xl font-bold">Tirage de joints</h3>
+              <p class="mt-2 text-sm text-white/75">Niveau 5 pour une planéité impeccable.</p>
+            </div>
+          </article>
+          <article class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-ink shadow-lg">
+            <img class="absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-110 group-hover:grayscale-0" alt="Piece moderne fraichement peinte" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtMdTodufBCbwntM_1N0c3nmd8iPtZvoZPsKk27A8dHwwb5L0J2Ek8mk3WeCRXIpJJGI4dZsBxWjyQiTY68qhuTeaa0H4AszP36PRg2NcoLUjfAZyOHyayXQ5zipMr7pByVSBHgwxV7321CaA_mdlgxYJepkGgX7jKqrmRIC4gh6LfS9G2bY283CR38h-LW-euAcfMNnTHvhKIYGv_Otj9xDGPTTy3YlymY6kFeUtShv-3odWfl37V4CKpoCysoNWqdvGTS-1USYCE">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 p-7 text-white">
+              <span class="material-symbols-outlined text-4xl">format_paint</span>
+              <h3 class="mt-3 text-2xl font-bold">Peinture élite</h3>
+              <p class="mt-2 text-sm text-white/75">Fini net, uniforme et durable.</p>
+            </div>
+          </article>
+          <article class="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-ink shadow-lg">
+            <img class="absolute inset-0 h-full w-full object-cover grayscale transition duration-700 group-hover:scale-110 group-hover:grayscale-0" alt="Reparation de plafond apres degat d'eau" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrECfJEoIBQAxc0UvLVwHWrWsUH8LBHAKnvbmqO0VZCo0uxWoGtTvcj8JjpzF6ziiC-nDI7YEjrP0NlLHQH93c_gAtj86q74apuaL3Gh4qnjNGaqDOcFVT7yao7gpcBdtTfB66_5HgrWr_HzY5ht48pNWX4aXHVAc2nCK3uocc6tQXvKaKdU-HtcjKWg0xMH5DUIGUa_-v8syhbFTnpmLIhUHDIUT8NCxJn7OMKFaera-b91Ez7D_gYe2aiHQfEmlLGI8ZdW5yCG7P">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 p-7 text-white">
+              <span class="material-symbols-outlined text-4xl">water_damage</span>
+              <h3 class="mt-3 text-2xl font-bold">Restauration</h3>
+              <p class="mt-2 text-sm text-white/75">Réparation invisible après fissures ou dégâts d'eau.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projets" class="overflow-hidden bg-ink px-5 py-24 text-white md:px-10 md:py-32">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
+        <div>
+          <h2 class="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">Avant.<br>Après.<br><span class="text-lime">Invisible.</span></h2>
+          <p class="mt-8 max-w-md text-lg leading-8 text-white/65">Nos techniques de finition dépassent les standards de l'industrie: murs nets, joints invisibles et finitions prêtes pour la lumière réelle.</p>
+          <div class="mt-10 flex gap-10">
+            <div>
+              <div class="text-4xl font-extrabold">12k+</div>
+              <p class="mt-2 text-xs uppercase tracking-widest text-white/45">Mètres carrés finis</p>
+            </div>
+            <div>
+              <div class="text-4xl font-extrabold">0</div>
+              <p class="mt-2 text-xs uppercase tracking-widest text-white/45">Joints visibles</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative h-[540px] overflow-hidden rounded-2xl shadow-2xl">
+          <div class="absolute inset-0 flex">
+            <div class="relative h-full w-1/2 overflow-hidden border-r-2 border-white/50">
+              <img class="absolute left-0 h-full max-w-none object-cover grayscale" alt="Avant travaux de gypse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqw7a01V4NI1EPf5lF9InROuEI1bGfOYNTykBHxeX_6gfXeCcITQ1Q0FV55L-qFvh6tTqSTLGUvnYUJw49yOygSeYywIlTBclHZqrtIoZ-ioK9kAdlDQCDYpefTK8YpXwdTHT5a9_ctDk-9a99X1DQh65zZzmxHVqRgSImJHMCQOFtfDjCkzT5_DI31R4kb9wc0ayaPzgKczOMJqay9Re29mg15rW0deTLgRTaRNWveFSvimcFzFoJeDdvBgEq519dRRcCwV_By0V8">
+              <span class="absolute left-5 top-5 rounded-lg bg-black/60 px-4 py-2 font-mono text-xs">AVANT</span>
+            </div>
+            <div class="relative h-full w-1/2 overflow-hidden">
+              <img class="absolute right-0 h-full max-w-none object-cover" alt="Apres finition haut de gamme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-CSCxkzUCbsFZE2UjFzMJzU8Bf6ndsKs-fW0tNclMcuhzALi14nJCFjLiLyhq3cOTeFTkIZRzC07F130ans2UAdx1hIGaGuAIbipSLAF5o0m3WtlYWspkBB5Q6MeSvbS3geBDZbCHLLe23wB7rXePPVmhpbCv8JyhefvViiUFd8lezVjt1noO8R8lkvktRV80FIZcOtX8ddqES95MHn0c_AFgQUxWQfy5HpyKrPH3I38aYazOwCuI3qRxUmMUC2sVqxtrbulzFuvU">
+              <span class="absolute right-5 top-5 rounded-lg bg-blue px-4 py-2 font-mono text-xs">APRES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="processus" class="bg-white px-5 py-24 md:px-10 md:py-32">
+      <div class="mx-auto max-w-7xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight md:text-5xl">Un parcours digital, un fini tangible.</h2>
+        <div class="mt-14 grid gap-8 md:grid-cols-4">
+          <div class="flex flex-col items-center">
+            <div class="flex h-20 w-20 items-center justify-center rounded-full border border-black/15 bg-white"><span class="material-symbols-outlined text-3xl">photo_camera</span></div>
+            <h3 class="mt-5 text-xl font-bold">1. Capturer</h3>
+            <p class="mt-2 text-sm text-muted">Photographiez vos murs.</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="flex h-20 w-20 items-center justify-center rounded-full border border-black/15 bg-white"><span class="material-symbols-outlined text-3xl">auto_awesome</span></div>
+            <h3 class="mt-5 text-xl font-bold">2. Analyser</h3>
+            <p class="mt-2 text-sm text-muted">L'IA prépare une estimation.</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="flex h-20 w-20 items-center justify-center rounded-full border border-black/15 bg-white"><span class="material-symbols-outlined text-3xl">verified</span></div>
+            <h3 class="mt-5 text-xl font-bold">3. Valider</h3>
+            <p class="mt-2 text-sm text-muted">Confirmation par expert.</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="flex h-20 w-20 items-center justify-center rounded-full border border-black/15 bg-white"><span class="material-symbols-outlined text-3xl">brush</span></div>
+            <h3 class="mt-5 text-xl font-bold">4. Transformer</h3>
+            <p class="mt-2 text-sm text-muted">Réalisation impeccable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-soft px-5 py-24 md:px-10 md:py-32">
+      <div class="mx-auto max-w-7xl">
+        <h2 class="mb-10 text-3xl font-bold tracking-tight md:text-5xl">Paroles de propriétaires.</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="rounded-2xl bg-white p-7 shadow-sm">
+            <p class="text-[#d8a300]">★★★★★</p>
+            <p class="mt-4 italic">"Le prix final était exactement celui annoncé. La finition à Westmount est parfaite."</p>
+            <p class="mt-6 font-bold">Jean-Philippe R.</p>
+            <p class="text-sm text-muted">Westmount, QC</p>
+          </article>
+          <article class="rounded-2xl bg-white p-7 shadow-sm">
+            <p class="text-[#d8a300]">★★★★★</p>
+            <p class="mt-4 italic">"Les joints sont littéralement invisibles même sous la lumière des grandes fenêtres."</p>
+            <p class="mt-6 font-bold">Marie-Eve G.</p>
+            <p class="text-sm text-muted">Montréal, QC</p>
+          </article>
+          <article class="rounded-2xl bg-white p-7 shadow-sm">
+            <p class="text-[#d8a300]">★★★★★</p>
+            <p class="mt-4 italic">"Réactifs, professionnels et d'une propreté rare. Notre rénovation a été impeccable."</p>
+            <p class="mt-6 font-bold">David K.</p>
+            <p class="text-sm text-muted">Brossard, QC</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white px-5 py-24 md:px-10 md:py-32">
+      <div class="mx-auto grid max-w-7xl gap-8 border-t border-black/10 pt-16 lg:grid-cols-2">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight md:text-5xl">Peinture intérieure et réparation de gypse à Montréal</h2>
+          <p class="mt-6 text-lg leading-8 text-muted">Depuis plus de 10 ans, LuxeFinish s'impose comme une référence en finition haut de gamme. Architectes, entrepreneurs et propriétaires profitent d'une équipe minutieuse, transparente et ponctuelle.</p>
+        </div>
+        <div class="rounded-2xl bg-soft p-8">
+          <h3 class="text-2xl font-bold">Zones de service premium</h3>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <span class="rounded-lg bg-white px-5 py-3 font-semibold">Montréal</span>
+            <span class="rounded-lg bg-white px-5 py-3 font-semibold">Westmount</span>
+            <span class="rounded-lg bg-white px-5 py-3 font-semibold">Laval</span>
+            <span class="rounded-lg bg-white px-5 py-3 font-semibold">Brossard</span>
+            <span class="rounded-lg bg-white px-5 py-3 font-semibold">Longueuil</span>
+            <span class="rounded-lg bg-white px-5 py-3 font-semibold">Rive-Sud</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="relative overflow-hidden bg-ink px-5 py-24 text-white md:px-10 md:py-32">
+      <img class="absolute right-0 top-0 h-full w-1/2 object-cover opacity-10" alt="Texture de mur fini" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvqjXbuTYW4Le3VYwMb9KLpWATsoNVHSE3jdMulvBQvA99p0arJCIY1HDRT-_7TWU0vljlBFbYLEhZ3EeIT6V5sFxP3A32XjIjakFF2DlZitlJ5VwlLbWPjq4rmJalomLjkD6e7332T8OAce1AsDIfF5Ff-da4QGItFP6Z9zs2l6TjrjDApyNWqdCEEQlEhJTSR9GLl70Wkvqx1HCqb24__KJDDrzHAVTKSWtOwFOAxC1IVqfs3xRtrG-SYDNP8Qj9kxtDdg9lywbz">
+      <div class="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+        <div>
+          <h2 class="text-4xl font-extrabold leading-tight tracking-tight md:text-7xl">Prêt à transformer votre intérieur ?</h2>
+          <p class="mt-6 max-w-xl text-lg leading-8 text-white/65">Prenez rendez-vous avec un consultant ou utilisez l'outil IA pour préparer une première estimation.</p>
+          <a class="mt-10 inline-flex items-center gap-3 rounded-xl bg-blue px-8 py-5 text-lg font-bold text-white shadow-glow hover:scale-[1.02]" href="#estimation">
+            <span class="material-symbols-outlined">auto_awesome</span>
+            Estimation IA gratuite
+          </a>
+        </div>
+        <div class="glass-card rounded-2xl border-white/10 bg-white/10 p-6 md:p-9">
+          <h3 class="mb-7 text-2xl font-bold text-white">Contactez nos experts</h3>
+          <form id="contact-form" class="space-y-5">
+            <div>
+              <label class="mb-2 block text-xs font-bold uppercase tracking-widest text-white/50" for="name">Nom complet</label>
+              <input id="name" name="name" required class="w-full rounded-lg border-0 border-b-2 border-white/20 bg-white/5 p-4 text-white placeholder:text-white/30 focus:border-blue focus:ring-0" placeholder="Jean Tremblay" type="text">
+            </div>
+            <div>
+              <label class="mb-2 block text-xs font-bold uppercase tracking-widest text-white/50" for="email">Email</label>
+              <input id="email" name="email" required class="w-full rounded-lg border-0 border-b-2 border-white/20 bg-white/5 p-4 text-white placeholder:text-white/30 focus:border-blue focus:ring-0" placeholder="jean@exemple.ca" type="email">
+            </div>
+            <div>
+              <label class="mb-2 block text-xs font-bold uppercase tracking-widest text-white/50" for="project">Votre projet</label>
+              <textarea id="project" name="project" required class="w-full rounded-lg border-0 border-b-2 border-white/20 bg-white/5 p-4 text-white placeholder:text-white/30 focus:border-blue focus:ring-0" placeholder="Décrivez brièvement vos besoins..." rows="4"></textarea>
+            </div>
+            <button class="w-full rounded-xl bg-white py-5 font-bold text-ink transition hover:bg-lime" type="submit">Envoyer ma demande</button>
+            <p id="form-status" class="hidden rounded-lg bg-white/10 p-4 text-sm text-white/80"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white px-5 py-16 md:px-10">
+    <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
+      <div>
+        <div class="text-2xl font-extrabold">LuxeFinish</div>
+        <p class="mt-5 text-sm leading-6 text-muted">Technologies de finition haute-précision. La rencontre de l'artisanat et de l'intelligence artificielle.</p>
+      </div>
+      <div>
+        <h4 class="font-bold">Services</h4>
+        <ul class="mt-5 space-y-3 text-muted">
+          <li><a class="hover:text-blue" href="#expertise">Peinture intérieure</a></li>
+          <li><a class="hover:text-blue" href="#expertise">Tirage de joints</a></li>
+          <li><a class="hover:text-blue" href="#expertise">Pose de gypse</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold">Société</h4>
+        <ul class="mt-5 space-y-3 text-muted">
+          <li><a class="hover:text-blue" href="#projets">Portfolio</a></li>
+          <li><a class="hover:text-blue" href="#estimation">Estimation IA</a></li>
+          <li><a class="hover:text-blue" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold">Région</h4>
+        <ul class="mt-5 space-y-3 text-muted">
+          <li>Montréal, QC</li>
+          <li>Laval & Rive-Nord</li>
+          <li>Longueuil & Rive-Sud</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mx-auto mt-12 flex max-w-7xl flex-col justify-between gap-4 border-t border-black/10 pt-8 text-sm text-muted md:flex-row">
+      <p>© 2026 LuxeFinish. Technologies de Finition Haute-Précision.</p>
+      <div class="flex gap-6">
+        <a href="#contact">Confidentialité</a>
+        <a href="#contact">Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const upload = document.querySelector("#photo-upload");
+    const result = document.querySelector("#estimate-result");
+    const copy = document.querySelector("#estimate-copy");
+    const surfaceOutput = document.querySelector("#surface-output");
+    const priceOutput = document.querySelector("#price-output");
+
+    upload.addEventListener("change", () => {
+      const count = upload.files.length || 1;
+      const surface = 12 + count * 6.4;
+      const price = Math.round(surface * 78);
+      surfaceOutput.textContent = `${surface.toFixed(1)} m2`;
+      priceOutput.textContent = `${price.toLocaleString("fr-CA")} $ CAD`;
+      copy.textContent = `${count} photo(s) reçue(s). Estimation préliminaire: ${price.toLocaleString("fr-CA")} $ CAD pour environ ${surface.toFixed(1)} m2.`;
+      result.classList.remove("hidden");
+    });
+
+    document.querySelector("#contact-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const name = data.get("name");
+      const email = data.get("email");
+      const project = data.get("project");
+      const subject = encodeURIComponent(`Demande de soumission - ${name}`);
+      const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nProjet:\n${project}`);
+      const status = document.querySelector("#form-status");
+      status.textContent = "Merci. Votre application courriel va s'ouvrir pour envoyer la demande à LuxeFinish.";
+      status.classList.remove("hidden");
+      window.location.href = `mailto:contact@luxefinish.ca?subject=${subject}&body=${body}`;
+      event.currentTarget.reset();
+    });
+  </script>
+</body>
+</html>
