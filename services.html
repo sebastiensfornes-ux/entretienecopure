@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr-CA" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nos Services | Eco Pure – Entretien ménager Longueuil</title>
+  <meta name="description" content="Découvrez tous les services d'entretien ménager Eco Pure: résidentiel, commercial, grand ménage, déménagement et après-rénovation à Longueuil."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#134235",
+            "primary-container": "#2d5a4c",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#002118",
+            "primary-fixed": "#bcedda",
+            "primary-fixed-dim": "#a1d1bf",
+            "secondary": "#566342",
+            "secondary-container": "#d7e5bb",
+            "secondary-fixed": "#dae8be",
+            "secondary-fixed-dim": "#becca3",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#141f05",
+            "on-secondary-fixed-variant": "#3f4b2c",
+            "on-secondary-container": "#5a6745",
+            "tertiary-fixed": "#e1e6c2",
+            "on-tertiary-fixed": "#1a1d07",
+            "on-tertiary-fixed-variant": "#45492f",
+            "surface": "#fcf9f8",
+            "surface-container-low": "#f6f3f2",
+            "surface-container": "#f0eded",
+            "surface-variant": "#e5e2e1",
+            "on-surface": "#1c1b1b",
+            "on-surface-variant": "#404945",
+            "background": "#fcf9f8",
+            "outline": "#717975",
+            "outline-variant": "#c0c8c3",
+            "sage-wash": "#F1F4F0",
+            "soft-grey": "#F8F9FA",
+            "pure-white": "#FFFFFF",
+            "charcoal": "#333333",
+          },
+          fontFamily: {
+            "display": ["Montserrat", "sans-serif"],
+            "body": ["Inter", "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .filled { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .glass-nav {
+      background: rgba(252, 249, 248, 0.85);
+      backdrop-filter: blur(16px);
+    }
+    .card-shadow {
+      box-shadow: 0 4px 24px rgba(19, 66, 53, 0.08);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .card-shadow:hover {
+      box-shadow: 0 8px 40px rgba(19, 66, 53, 0.14);
+      transform: translateY(-4px);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    details summary::marker { display: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .expand-icon { transform: rotate(180deg); }
+    .expand-icon { transition: transform 0.3s ease; }
+    #mobile-menu { transition: max-height 0.3s ease; max-height: 0; overflow: hidden; }
+    #mobile-menu.open { max-height: 300px; }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface font-body">
+
+<!-- NAVIGATION (identique à index.html) -->
+<header id="navbar" class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/20 shadow-sm">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6 flex justify-between items-center h-20">
+    <a href="index.html" class="flex items-center gap-2">
+      <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center">
+        <span class="material-symbols-outlined filled text-white text-xl">eco</span>
+      </div>
+      <span class="font-display font-bold text-primary text-xl tracking-tight">Eco<span class="text-secondary">Pure</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="index.html" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">Accueil</a>
+      <a href="services.html" class="font-body font-medium text-primary border-b-2 border-primary pb-0.5">Services</a>
+      <a href="index.html#temoignages" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">Témoignages</a>
+      <a href="index.html#faq" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">FAQ</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:4505550123" class="hidden md:flex items-center gap-2 text-primary font-medium text-sm hover:underline">
+        <span class="material-symbols-outlined text-base">call</span>(450) 555-0123
+      </a>
+      <a href="index.html#soumission" class="bg-primary text-white px-5 py-2.5 rounded-full font-display font-semibold text-sm hover:bg-primary-container active:scale-95 transition-all">
+        Devis gratuit
+      </a>
+      <button id="burger-btn" class="md:hidden p-2 rounded-lg hover:bg-surface-container" aria-label="Menu">
+        <span class="material-symbols-outlined text-on-surface">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="md:hidden bg-surface border-t border-outline-variant/20">
+    <nav class="flex flex-col p-4 gap-1">
+      <a href="index.html" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">Accueil</a>
+      <a href="index.html#temoignages" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">Témoignages</a>
+      <a href="index.html#faq" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">FAQ</a>
+      <a href="tel:4505550123" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-primary flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">call</span>(450) 555-0123
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="pt-20">
+
+  <!-- PAGE HEADER -->
+  <section class="bg-primary py-14 md:py-20">
+    <div class="max-w-[1280px] mx-auto px-4 md:px-6 text-center">
+      <span class="inline-block text-xs font-bold tracking-widest text-primary-fixed uppercase mb-4">Ce qu'on offre</span>
+      <h1 class="font-display font-bold text-4xl md:text-5xl text-white mb-4">Nos Services Spécialisés</h1>
+      <p class="text-white/75 text-lg max-w-xl mx-auto">Un entretien ménager de précision, adapté à vos besoins, avec des produits écologiques certifiés.</p>
+    </div>
+  </section>
+
+  <!-- QUICK NAV -->
+  <nav class="bg-surface-container-low border-b border-outline-variant/15 sticky top-20 z-40 overflow-x-auto">
+    <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+      <div class="flex gap-1 py-3 min-w-max">
+        <a href="#residentiel" class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:text-primary transition-all whitespace-nowrap">🏠 Résidentiel</a>
+        <a href="#commercial" class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:text-primary transition-all whitespace-nowrap">🏢 Commercial</a>
+        <a href="#grand-menage" class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:text-primary transition-all whitespace-nowrap">🧹 Grand Ménage</a>
+        <a href="#demenagement" class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:text-primary transition-all whitespace-nowrap">🚚 Déménagement</a>
+        <a href="#renovation" class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:text-primary transition-all whitespace-nowrap">🔨 Après rénovation</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── SERVICE 1: RÉSIDENTIEL ── -->
+  <section id="residentiel" class="py-16 md:py-24">
+    <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+      <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-1/2 fade-in">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container rounded-full text-xs font-bold text-on-secondary-container uppercase tracking-wider mb-6">
+            <span class="material-symbols-outlined filled text-base">house</span> Service Résidentiel
+          </div>
+          <h2 class="font-display font-bold text-3xl md:text-4xl text-primary mb-5">Un foyer impeccable, toujours</h2>
+          <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+            Notre service d'entretien résidentiel régulier est conçu pour maintenir votre maison ou appartement dans un état de propreté optimal, semaine après semaine, avec une attention méticuleuse aux détails.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Cuisine et salle de bain</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Aspirateur et vadrouille</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Dépoussiérage complet</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Produits ÉcoLogo fournis</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Nettoyage des surfaces</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Flexibilité d'horaire</span>
+            </div>
+          </div>
+          <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 mb-6">
+            <p class="text-xs text-on-surface-variant mb-1 uppercase font-bold tracking-wider">À partir de</p>
+            <p class="text-3xl font-display font-bold text-primary">75$<span class="text-lg font-medium text-on-surface-variant">/visite</span></p>
+            <p class="text-sm text-on-surface-variant mt-1">Tarif récurrent semaine, 1–3 pièces</p>
+          </div>
+          <a href="index.html#soumission" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
+            Obtenir un devis <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+        <div class="lg:w-1/2 fade-in">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Nettoyage résidentiel Longueuil" class="w-full h-72 md:h-96 object-cover rounded-2xl shadow-lg"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6"><div class="border-t border-outline-variant/30"></div></div>
+
+  <!-- ── SERVICE 2: COMMERCIAL ── -->
+  <section id="commercial" class="py-16 md:py-24 bg-sage-wash/30">
+    <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+      <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
+        <div class="lg:w-1/2 fade-in">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container rounded-full text-xs font-bold text-on-secondary-container uppercase tracking-wider mb-6">
+            <span class="material-symbols-outlined filled text-base">business</span> Service Commercial
+          </div>
+          <h2 class="font-display font-bold text-3xl md:text-4xl text-primary mb-5">Des bureaux qui inspirent confiance</h2>
+          <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+            Un environnement de travail propre améliore la productivité et l'image de votre entreprise. Nos équipes interviennent selon votre horaire, sans perturber vos activités.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Bureaux & salles de réunion</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Espaces communs & cuisines</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Désinfection des surfaces</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Intervention tôt le matin</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Contrat flexible</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Rapport d'intervention</span>
+            </div>
+          </div>
+          <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 mb-6">
+            <p class="text-xs text-on-surface-variant mb-1 uppercase font-bold tracking-wider">À partir de</p>
+            <p class="text-3xl font-display font-bold text-primary">120$<span class="text-lg font-medium text-on-surface-variant">/visite</span></p>
+            <p class="text-sm text-on-surface-variant mt-1">Tarif commercial, selon superficie</p>
+          </div>
+          <a href="index.html#soumission" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
+            Obtenir un devis <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+        <div class="lg:w-1/2 fade-in">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80" alt="Nettoyage commercial bureaux Longueuil" class="w-full h-72 md:h-96 object-cover rounded-2xl shadow-lg"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICE 3: GRAND MÉNAGE ── -->
+  <section id="grand-menage" class="py-16 md:py-24">
+    <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+      <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-1/2 fade-in">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container rounded-full text-xs font-bold text-on-secondary-container uppercase tracking-wider mb-6">
+            <span class="material-symbols-outlined filled text-base">cleaning_services</span> Grand Ménage
+          </div>
+          <h2 class="font-display font-bold text-3xl md:text-4xl text-primary mb-5">Une remise à neuf totale</h2>
+          <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+            Notre grand ménage saisonnier est un nettoyage en profondeur de A à Z. Parfait au printemps ou à l'automne, pour retrouver un espace frais et purifié.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Armoires intérieures vidées</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Appareils nettoyés en profondeur</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Cadrages & fenêtres</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Plinthes & recoins</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Durée: 4–8 heures</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Équipe de 2 personnes</span>
+            </div>
+          </div>
+          <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 mb-6">
+            <p class="text-xs text-on-surface-variant mb-1 uppercase font-bold tracking-wider">À partir de</p>
+            <p class="text-3xl font-display font-bold text-primary">200$<span class="text-lg font-medium text-on-surface-variant">/intervention</span></p>
+            <p class="text-sm text-on-surface-variant mt-1">Service unique, selon superficie</p>
+          </div>
+          <a href="index.html#soumission" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
+            Obtenir un devis <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+        <div class="lg:w-1/2 fade-in">
+          <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=700&q=80" alt="Grand ménage de printemps Longueuil" class="w-full h-72 md:h-96 object-cover rounded-2xl shadow-lg"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICE 4: DÉMÉNAGEMENT ── -->
+  <section id="demenagement" class="py-16 md:py-24 bg-sage-wash/30">
+    <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+      <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
+        <div class="lg:w-1/2 fade-in">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container rounded-full text-xs font-bold text-on-secondary-container uppercase tracking-wider mb-6">
+            <span class="material-symbols-outlined filled text-base">local_shipping</span> Déménagement
+          </div>
+          <h2 class="font-display font-bold text-3xl md:text-4xl text-primary mb-5">Partez ou arrivez dans un espace purifié</h2>
+          <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+            Que vous quittiez votre logement ou emménagiez dans un nouveau chez-vous, notre équipe s'assure que l'espace est impeccable pour vous ou pour les futurs occupants.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Nettoyage sortie locataire</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Préparation nouvel arrivant</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Désinfection complète</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Nettoyage des armoires</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Disponibilité 7 jours/7</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Certificat de nettoyage</span>
+            </div>
+          </div>
+          <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 mb-6">
+            <p class="text-xs text-on-surface-variant mb-1 uppercase font-bold tracking-wider">À partir de</p>
+            <p class="text-3xl font-display font-bold text-primary">180$<span class="text-lg font-medium text-on-surface-variant">/intervention</span></p>
+            <p class="text-sm text-on-surface-variant mt-1">Service unique, selon superficie</p>
+          </div>
+          <a href="index.html#soumission" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
+            Obtenir un devis <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+        <div class="lg:w-1/2 fade-in">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80" alt="Nettoyage déménagement Longueuil" class="w-full h-72 md:h-96 object-cover rounded-2xl shadow-lg"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICE 5: APRÈS RÉNOVATION ── -->
+  <section id="renovation" class="py-16 md:py-24">
+    <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+      <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-1/2 fade-in">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container rounded-full text-xs font-bold text-on-secondary-container uppercase tracking-wider mb-6">
+            <span class="material-symbols-outlined filled text-base">construction</span> Après Rénovation
+          </div>
+          <h2 class="font-display font-bold text-3xl md:text-4xl text-primary mb-5">Profitez de vos rénovations dès le premier jour</h2>
+          <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+            Les chantiers de construction laissent poussière, plâtre et débris partout. Notre équipe spécialisée remet votre espace à zéro pour que vous puissiez en profiter immédiatement.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Enlèvement poussière fine</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Nettoyage résidus de plâtre</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Protection des surfaces neuves</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Nettoyage fenêtres & vitres</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Aspirateur HEPA professionnel</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
+              <span class="text-sm font-medium">Disponibilité rapide</span>
+            </div>
+          </div>
+          <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 mb-6">
+            <p class="text-xs text-on-surface-variant mb-1 uppercase font-bold tracking-wider">À partir de</p>
+            <p class="text-3xl font-display font-bold text-primary">250$<span class="text-lg font-medium text-on-surface-variant">/intervention</span></p>
+            <p class="text-sm text-on-surface-variant mt-1">Devis personnalisé selon l'ampleur</p>
+          </div>
+          <a href="index.html#soumission" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
+            Obtenir un devis <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+        <div class="lg:w-1/2 fade-in">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Nettoyage après rénovation Longueuil" class="w-full h-72 md:h-96 object-cover rounded-2xl shadow-lg"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="bg-primary py-14 text-center">
+    <div class="max-w-[600px] mx-auto px-4">
+      <h2 class="font-display font-bold text-3xl text-white mb-4">Prêt(e) à commencer?</h2>
+      <p class="text-white/75 mb-8">Obtenez votre soumission gratuite en ligne en moins de 2 minutes.</p>
+      <a href="index.html#soumission" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-xl font-display font-bold text-lg hover:bg-primary-fixed active:scale-[0.98] transition-all shadow-lg">
+        <span class="material-symbols-outlined">calculate</span> Calculer mon prix
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-primary text-white py-12">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="flex items-center gap-2">
+      <div class="w-9 h-9 bg-white/15 rounded-lg flex items-center justify-center">
+        <span class="material-symbols-outlined filled text-primary-fixed text-xl">eco</span>
+      </div>
+      <span class="font-display font-bold text-xl">Eco<span class="text-primary-fixed">Pure</span></span>
+    </div>
+    <nav class="flex flex-wrap gap-6 text-sm text-white/70">
+      <a href="index.html" class="hover:text-white transition-colors">Accueil</a>
+      <a href="index.html#soumission" class="hover:text-white transition-colors">Devis gratuit</a>
+      <a href="index.html#temoignages" class="hover:text-white transition-colors">Témoignages</a>
+      <a href="index.html#faq" class="hover:text-white transition-colors">FAQ</a>
+    </nav>
+    <p class="text-xs text-white/50">© 2024 Eco Pure Longueuil</p>
+  </div>
+</footer>
+
+<!-- FAB mobile -->
+<div class="fixed bottom-6 right-6 z-40 md:hidden">
+  <a href="tel:4505550123" class="w-16 h-16 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-2xl active:scale-90 transition-transform" aria-label="Appeler">
+    <span class="material-symbols-outlined text-3xl">call</span>
+  </a>
+</div>
+
+<script>
+  // Burger menu
+  const burgerBtn = document.getElementById('burger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  burgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    burgerBtn.querySelector('.material-symbols-outlined').textContent = 
+      mobileMenu.classList.contains('open') ? 'close' : 'menu';
+  });
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burgerBtn.querySelector('.material-symbols-outlined').textContent = 'menu';
+    });
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(el => {
+      if (el.isIntersecting) { el.target.classList.add('visible'); observer.unobserve(el.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Highlight active quick-nav link
+  const sections = document.querySelectorAll('section[id]');
+  const quickLinks = document.querySelectorAll('nav a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    quickLinks.forEach(link => {
+      link.classList.remove('bg-secondary-container', 'text-primary', 'font-semibold');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('bg-secondary-container', 'text-primary', 'font-semibold');
+      }
+    });
+  });
+</script>
+</body>
+</html>
