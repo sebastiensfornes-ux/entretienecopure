@@ -1027,8 +1027,8 @@
   };
 
   function getPrice(type, rooms, freq) {
-    // Convertir bracket en nombre de pièces
-    let r = 3;
+    // rooms peut être un nombre direct ("5") ou un bracket ("4-6")
+    let r;
     if (rooms === '1-3') r = 3;
     else if (rooms === '4-6') r = 4;
     else if (rooms === '7-9') r = 7;
@@ -1046,19 +1046,10 @@
   }
 
   function calculateDesktop() {
-    const type = document.getElementById('type-desktop').value;
-    const rooms = document.getElementById('rooms-desktop').value;
-    const freq = document.getElementById('freq-desktop').value;
-
-    // Map rooms number to bracket
-    const r = parseInt(rooms);
-    let bracket = '1-3';
-    if (r >= 4 && r <= 6) bracket = '4-6';
-    else if (r >= 7 && r <= 9) bracket = '7-9';
-    else if (r >= 10) bracket = '10+';
-
-    const { price, label, isRecurring } = getPrice(type, bracket, freq);
-    
+    const type  = document.getElementById('type-desktop').value;
+    const rooms = document.getElementById('rooms-desktop').value; // nombre exact ex: "5"
+    const freq  = document.getElementById('freq-desktop').value;
+    const { price, label, isRecurring } = getPrice(type, rooms, freq);
     document.getElementById('price-desktop').textContent = price + '$';
     document.getElementById('price-note-desktop').textContent = label + (isRecurring ? ' · tarif récurrent' : '');
     document.getElementById('estimation-preview-desktop').classList.remove('hidden');
