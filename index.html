@@ -233,8 +233,8 @@
 
     <!-- CTA + burger -->
     <div class="flex items-center gap-3">
-      <a href="tel:5148509985" class="hidden md:flex items-center gap-2 text-primary font-medium text-sm hover:underline">
-        <span class="material-symbols-outlined text-base">call</span>(514) 850-9985
+      <a href="tel:4505550123" class="hidden md:flex items-center gap-2 text-primary font-medium text-sm hover:underline">
+        <span class="material-symbols-outlined text-base">call</span>(450) 555-0123
       </a>
       <a href="#soumission" class="bg-primary text-white px-5 py-2.5 rounded-full font-display font-semibold text-sm hover:bg-primary-container active:scale-95 transition-all">
         Devis gratuit
@@ -253,8 +253,8 @@
       <a href="#resultats" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">Résultats</a>
       <a href="#temoignages" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">Témoignages</a>
       <a href="#faq" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">FAQ</a>
-      <a href="tel:5148509985" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-primary flex items-center gap-2">
-        <span class="material-symbols-outlined text-base">call</span>(514) 850-9985
+      <a href="tel:4505550123" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-primary flex items-center gap-2">
+        <span class="material-symbols-outlined text-base">call</span>(450) 555-0123
       </a>
     </nav>
   </div>
@@ -295,9 +295,9 @@
           <span class="material-symbols-outlined text-lg">calculate</span>
           Soumission gratuite
         </a>
-        <a href="tel:5148509985" class="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white px-7 py-4 rounded-xl font-display font-bold text-base hover:bg-white/10 active:scale-[0.98] transition-all backdrop-blur-sm">
+        <a href="tel:4505550123" class="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white px-7 py-4 rounded-xl font-display font-bold text-base hover:bg-white/10 active:scale-[0.98] transition-all backdrop-blur-sm">
           <span class="material-symbols-outlined text-lg">call</span>
-          (514) 850-9985
+          (450) 555-0123
         </a>
       </div>
       <!-- Trust badges -->
@@ -355,7 +355,7 @@
             Voir mon estimation
           </button>
           <p class="text-center text-xs text-on-surface-variant">
-            Ou appelez-nous: <a href="tel:5148509985" class="text-primary font-semibold hover:underline">(514) 850-9985</a>
+            Ou appelez-nous: <a href="tel:4505550123" class="text-primary font-semibold hover:underline">(450) 555-0123</a>
           </p>
         </div>
       </div>
@@ -507,50 +507,27 @@
         </a>
       </div>
 
-        <!-- Interactive Before/After Slider -->
-        <div class="lg:w-1/2 fade-in w-full">
-          <div class="relative select-none rounded-2xl overflow-hidden shadow-2xl" style="aspect-ratio:4/3" id="ba-wrap">
-            <!-- AFTER (bottom, full) -->
-            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80"
-                 alt="Après nettoyage Eco Pure"
-                 class="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                 draggable="false"/>
-            <!-- BEFORE (top, clipped by clip-path) -->
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-                 alt="Avant nettoyage"
-                 class="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                 draggable="false"
-                 id="ba-before"/>
-            <!-- Divider -->
-            <div id="ba-line" class="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg z-10 cursor-ew-resize" style="left:50%">
-              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-xl flex items-center justify-center">
-                <span class="material-symbols-outlined text-primary text-xl">swap_horiz</span>
-              </div>
-            </div>
-            <!-- Labels -->
-            <div class="absolute top-4 left-4 z-20 bg-charcoal/80 text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Avant</div>
-            <div class="absolute top-4 right-4 z-20 bg-primary text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Après</div>
-            <!-- Hint -->
-            <div id="ba-hint" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 bg-black/50 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-sm">swap_horiz</span> Glissez pour comparer
-            </div>
+      <!-- Images side -->
+      <div class="lg:w-1/2 fade-in w-full">
+        <div class="grid grid-cols-2 gap-4 relative">
+          <div class="before-after-container rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80" alt="Salle de bain avant nettoyage" class="w-full h-64 md:h-80 object-cover grayscale"/>
+            <span class="before-label">AVANT</span>
           </div>
-          <!-- Stats -->
-          <div class="mt-4 grid grid-cols-3 gap-3">
-            <div class="bg-white rounded-xl p-4 text-center card-shadow">
-              <p class="font-display font-bold text-2xl text-primary">99%</p>
-              <p class="text-xs text-on-surface-variant">Clients récurrents</p>
-            </div>
-            <div class="bg-white rounded-xl p-4 text-center card-shadow">
-              <p class="font-display font-bold text-2xl text-primary">200+</p>
-              <p class="text-xs text-on-surface-variant">Ménages par mois</p>
-            </div>
-            <div class="bg-white rounded-xl p-4 text-center card-shadow">
-              <p class="font-display font-bold text-2xl text-primary">4.9★</p>
-              <p class="text-xs text-on-surface-variant">Note moyenne</p>
-            </div>
+          <div class="before-after-container rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80" alt="Salle de bain après nettoyage Eco Pure" class="w-full h-64 md:h-80 object-cover"/>
+            <span class="after-label">APRÈS</span>
           </div>
         </div>
+        <!-- Floating stat badge -->
+        <div class="hidden md:block absolute -bottom-6 -right-6 bg-tertiary-fixed p-5 rounded-2xl shadow-lg">
+          <p class="font-display font-bold text-3xl text-on-tertiary-fixed">99%</p>
+          <p class="text-sm text-on-tertiary-fixed-variant">Clients récurrents</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- ════════════════════════════════════════════
@@ -804,7 +781,7 @@
         <h3 class="font-display font-bold text-2xl text-primary mb-3">Demande envoyée!</h3>
         <p class="text-on-surface-variant mb-2">Merci pour votre confiance.</p>
         <p class="text-on-surface-variant text-sm mb-8">Notre équipe vous contactera dans les <strong class="text-primary">2 heures ouvrables</strong> pour confirmer votre soumission.</p>
-        <a href="tel:5148509985" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container transition-all">
+        <a href="tel:4505550123" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container transition-all">
           <span class="material-symbols-outlined">call</span> Nous appeler
         </a>
       </div>
@@ -923,11 +900,11 @@
           </li>
           <li class="flex items-center gap-3">
             <span class="material-symbols-outlined text-primary-fixed text-base">call</span>
-            <a href="tel:5148509985" class="hover:text-white transition-colors">(514) 850-9985</a>
+            <a href="tel:4505550123" class="hover:text-white transition-colors">(450) 555-0123</a>
           </li>
           <li class="flex items-center gap-3">
             <span class="material-symbols-outlined text-primary-fixed text-base">mail</span>
-            <a href="mailto:info@ecopure.com" class="hover:text-white transition-colors">info@ecopure.com</a>
+            <a href="mailto:bonjour@ecopure.ca" class="hover:text-white transition-colors">bonjour@ecopure.ca</a>
           </li>
         </ul>
       </div>
@@ -960,7 +937,7 @@
      FAB (mobile phone button)
 ════════════════════════════════════════════ -->
 <div class="fixed bottom-6 right-6 z-40 md:hidden">
-  <a href="tel:5148509985" class="relative w-16 h-16 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-2xl active:scale-90 transition-transform fab-pulse" aria-label="Appeler Eco Pure">
+  <a href="tel:4505550123" class="relative w-16 h-16 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-2xl active:scale-90 transition-transform fab-pulse" aria-label="Appeler Eco Pure">
     <span class="material-symbols-outlined text-3xl relative z-10">call</span>
   </a>
 </div>
@@ -1034,21 +1011,13 @@
 
 
   // ── Pricing calculator ────────────────────────
-  // Base: 128$ pour 1-4 pièces, +20$ par pièce supplémentaire à partir de 5
-  function calcBasePrice(type, rooms) {
-    const r = parseInt(rooms) || 4;
-    const BASE = 128;
-    const extra = Math.max(0, r - 4) * 20;
-    const typeMultiplier = {
-      regulier: 1,
-      grand: 2.2,
-      renovation: 2.8,
-      demenagement: 1.9,
-      commercial: 1.4,
-    };
-    return Math.round((BASE + extra) * (typeMultiplier[type] ?? 1));
-  }
-
+  const PRICES = {
+    regulier:     { '1-3': 75,  '4-6': 105, '7-9': 145, '10+': 195 },
+    grand:        { '1-3': 200, '4-6': 280, '7-9': 380, '10+': 480 },
+    renovation:   { '1-3': 250, '4-6': 350, '7-9': 480, '10+': 600 },
+    demenagement: { '1-3': 180, '4-6': 250, '7-9': 340, '10+': 440 },
+    commercial:   { '1-3': 120, '4-6': 180, '7-9': 260, '10+': 360 },
+  };
   const FREQ_DISCOUNT = {
     hebdo: 0.85, biweekly: 0.90, mensuel: 0.95, unique: 1.0
   };
@@ -1057,20 +1026,13 @@
   };
 
   function getPrice(type, rooms, freq) {
-    // rooms can be bracket string ('4-6') or number string
-    let r = 4;
-    if (rooms === '1-3') r = 3;
-    else if (rooms === '4-6') r = 5;
-    else if (rooms === '7-9') r = 8;
-    else if (rooms === '10+') r = 11;
-    else r = parseInt(rooms) || 4;
-
-    const base = calcBasePrice(type, r);
+    const base = PRICES[type]?.[rooms] ?? 120;
     const disc = FREQ_DISCOUNT[freq] ?? 1;
+    const isRecurring = freq !== 'unique';
     return {
       price: Math.round(base * disc),
       label: FREQ_LABELS[freq] ?? '',
-      isRecurring: freq !== 'unique'
+      isRecurring
     };
   }
 
@@ -1078,7 +1040,16 @@
     const type = document.getElementById('type-desktop').value;
     const rooms = document.getElementById('rooms-desktop').value;
     const freq = document.getElementById('freq-desktop').value;
-    const { price, label, isRecurring } = getPrice(type, rooms, freq);
+
+    // Map rooms number to bracket
+    const r = parseInt(rooms);
+    let bracket = '1-3';
+    if (r >= 4 && r <= 6) bracket = '4-6';
+    else if (r >= 7 && r <= 9) bracket = '7-9';
+    else if (r >= 10) bracket = '10+';
+
+    const { price, label, isRecurring } = getPrice(type, bracket, freq);
+    
     document.getElementById('price-desktop').textContent = price + '$';
     document.getElementById('price-note-desktop').textContent = label + (isRecurring ? ' · tarif récurrent' : '');
     document.getElementById('estimation-preview-desktop').classList.remove('hidden');
@@ -1201,156 +1172,7 @@
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), duration);
   }
-
-  // ── Before/After Slider ───────────────────────
-  (function() {
-    const wrap  = document.getElementById('ba-wrap');
-    if (!wrap) return;
-    const before = document.getElementById('ba-before');
-    const line   = document.getElementById('ba-line');
-    const hint   = document.getElementById('ba-hint');
-    let pct = 50;
-    let dragging = false;
-
-    function update(clientX) {
-      const rect = wrap.getBoundingClientRect();
-      pct = Math.min(Math.max(((clientX - rect.left) / rect.width) * 100, 2), 98);
-      before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-      line.style.left = pct + '%';
-      if (hint) hint.style.opacity = '0';
-    }
-
-    // Init clip
-    before.style.clipPath = 'inset(0 50% 0 0)';
-
-    wrap.addEventListener('mousedown',  e => { dragging = true; update(e.clientX); });
-    window.addEventListener('mousemove', e => { if (dragging) update(e.clientX); });
-    window.addEventListener('mouseup',   () => { dragging = false; });
-    wrap.addEventListener('touchstart',  e => { dragging = true; update(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('touchmove', e => { if (dragging) update(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('touchend',  () => { dragging = false; });
-  })();
-
-
-  // ── Promo Popup ───────────────────────────────
-  function openPromo() {
-    const overlay = document.getElementById('promo-overlay');
-    const modal   = document.getElementById('promo-modal');
-    overlay.classList.remove('hidden');
-    overlay.classList.add('flex');
-    requestAnimationFrame(() => {
-      modal.style.transform = 'scale(1)';
-      modal.style.opacity   = '1';
-    });
-    document.body.style.overflow = 'hidden';
-    startCountdown();
-  }
-
-  function closePromo() {
-    const overlay = document.getElementById('promo-overlay');
-    const modal   = document.getElementById('promo-modal');
-    modal.style.transform = 'scale(0.9)';
-    modal.style.opacity   = '0';
-    setTimeout(() => {
-      overlay.classList.add('hidden');
-      overlay.classList.remove('flex');
-    }, 300);
-    document.body.style.overflow = '';
-    sessionStorage.setItem('promo-seen', '1');
-  }
-
-  function startCountdown() {
-    // End of current month
-    const now = new Date();
-    const end = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
-    function tick() {
-      const diff = end - new Date();
-      if (diff <= 0) return;
-      const d = Math.floor(diff / 86400000);
-      const h = Math.floor((diff % 86400000) / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      document.getElementById('cnt-days').textContent = String(d).padStart(2,'0');
-      document.getElementById('cnt-hrs').textContent  = String(h).padStart(2,'0');
-      document.getElementById('cnt-min').textContent  = String(m).padStart(2,'0');
-    }
-    tick();
-    setInterval(tick, 30000);
-  }
-
-  // Show popup after 4 seconds, once per session
-  if (!sessionStorage.getItem('promo-seen')) {
-    setTimeout(openPromo, 4000);
-  }
 </script>
-
-
-<!-- ════════════════════════════════════════════
-     POPUP PROMO
-════════════════════════════════════════════ -->
-<div id="promo-overlay" class="fixed inset-0 z-[100] items-center justify-center p-4 hidden">
-  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closePromo()"></div>
-  <div id="promo-modal" class="relative bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden transform scale-90 opacity-0 transition-all duration-300">
-    <!-- Green top band -->
-    <div class="bg-primary px-8 pt-8 pb-10 text-center relative">
-      <button onclick="closePromo()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white transition-colors" aria-label="Fermer">
-        <span class="material-symbols-outlined text-base">close</span>
-      </button>
-      <div class="inline-flex items-center gap-2 bg-secondary-fixed text-on-secondary-fixed px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-        <span class="material-symbols-outlined filled text-base">local_offer</span>
-        Offre limitée – ce mois-ci seulement
-      </div>
-      <div class="text-white">
-        <p class="text-5xl font-display font-black mb-1">20%</p>
-        <p class="text-xl font-display font-bold">sur votre 1er service</p>
-      </div>
-    </div>
-
-    <!-- White bottom -->
-    <div class="px-8 py-7 -mt-4 bg-white rounded-t-3xl relative">
-      <h3 class="font-display font-bold text-xl text-primary text-center mb-3">
-        Réservez un ménage hebdomadaire pour le mois
-      </h3>
-      <p class="text-on-surface-variant text-sm text-center leading-relaxed mb-6">
-        Engagez-vous pour un mois de ménage hebdomadaire et obtenez <strong class="text-primary">20% de rabais sur votre première visite</strong>. L'offre s'applique automatiquement lors de votre soumission.
-      </p>
-
-      <!-- Benefits list -->
-      <div class="space-y-2 mb-6">
-        <div class="flex items-center gap-3 text-sm">
-          <span class="material-symbols-outlined filled text-secondary text-base">check_circle</span>
-          <span>Prix régulier à partir de 128$ → <strong class="text-primary">102$</strong> pour la 1re visite</span>
-        </div>
-        <div class="flex items-center gap-3 text-sm">
-          <span class="material-symbols-outlined filled text-secondary text-base">check_circle</span>
-          <span>4 ménages hebdomadaires inclus</span>
-        </div>
-        <div class="flex items-center gap-3 text-sm">
-          <span class="material-symbols-outlined filled text-secondary text-base">check_circle</span>
-          <span>Produits ÉcoLogo fournis, assurance complète</span>
-        </div>
-      </div>
-
-      <!-- Countdown -->
-      <div class="bg-sage-wash rounded-xl p-3 text-center mb-6">
-        <p class="text-xs text-on-surface-variant mb-1">Offre valide encore</p>
-        <div class="flex justify-center gap-3 font-display font-bold text-primary text-lg" id="countdown">
-          <span><span id="cnt-days">--</span><span class="text-xs font-body font-normal text-on-surface-variant block">jours</span></span>
-          <span class="text-on-surface-variant/40">:</span>
-          <span><span id="cnt-hrs">--</span><span class="text-xs font-body font-normal text-on-surface-variant block">heures</span></span>
-          <span class="text-on-surface-variant/40">:</span>
-          <span><span id="cnt-min">--</span><span class="text-xs font-body font-normal text-on-surface-variant block">min</span></span>
-        </div>
-      </div>
-
-      <a href="#soumission" onclick="closePromo()" class="block w-full bg-primary text-white text-center py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
-        J'en profite maintenant <span class="material-symbols-outlined align-middle text-base ml-1">arrow_forward</span>
-      </a>
-      <button onclick="closePromo()" class="block w-full text-center text-xs text-on-surface-variant mt-3 hover:text-primary transition-colors">
-        Non merci, je préfère payer le plein prix
-      </button>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>
