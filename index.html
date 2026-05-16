@@ -507,65 +507,50 @@
         </a>
       </div>
 
-      <!-- Interactive Before/After Slider -->
-      <div class="lg:w-1/2 fade-in w-full">
-        <div class="relative select-none rounded-2xl overflow-hidden shadow-2xl" style="aspect-ratio: 4/3;" id="ba-slider-wrap">
-          <!-- AFTER image (bottom layer, full width) -->
-          <img
-            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=85"
-            alt="Cuisine après nettoyage Eco Pure"
-            class="absolute inset-0 w-full h-full object-cover"
-            draggable="false"
-          />
-          <!-- BEFORE image (top layer, clipped) -->
-          <div id="ba-before-clip" class="absolute inset-0 overflow-hidden" style="width: 50%;">
-            <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85"
-              alt="Cuisine avant nettoyage"
-              class="absolute inset-0 w-full h-full object-cover"
-              style="width: calc(100% / var(--clip-pct, 0.5)); max-width: none;"
-              draggable="false"
-              id="ba-before-img"
-            />
-          </div>
-
-          <!-- Divider line -->
-          <div id="ba-divider" class="absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_8px_rgba(0,0,0,0.5)] z-20 cursor-ew-resize" style="left: 50%;">
-            <!-- Handle -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center">
-              <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings:'FILL' 0,'wght' 600">swap_horiz</span>
+        <!-- Interactive Before/After Slider -->
+        <div class="lg:w-1/2 fade-in w-full">
+          <div class="relative select-none rounded-2xl overflow-hidden shadow-2xl" style="aspect-ratio:4/3" id="ba-wrap">
+            <!-- AFTER (bottom, full) -->
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80"
+                 alt="Après nettoyage Eco Pure"
+                 class="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                 draggable="false"/>
+            <!-- BEFORE (top, clipped by clip-path) -->
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+                 alt="Avant nettoyage"
+                 class="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                 draggable="false"
+                 id="ba-before"/>
+            <!-- Divider -->
+            <div id="ba-line" class="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg z-10 cursor-ew-resize" style="left:50%">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-xl flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary text-xl">swap_horiz</span>
+              </div>
+            </div>
+            <!-- Labels -->
+            <div class="absolute top-4 left-4 z-20 bg-charcoal/80 text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Avant</div>
+            <div class="absolute top-4 right-4 z-20 bg-primary text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Après</div>
+            <!-- Hint -->
+            <div id="ba-hint" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 bg-black/50 text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm">swap_horiz</span> Glissez pour comparer
             </div>
           </div>
-
-          <!-- Labels -->
-          <div class="absolute top-4 left-4 z-30 bg-charcoal/80 text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Avant</div>
-          <div class="absolute top-4 right-4 z-30 bg-primary text-white px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Après</div>
-
-          <!-- Drag hint -->
-          <div id="ba-hint" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 bg-black/50 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-sm flex items-center gap-1.5 transition-opacity duration-500">
-            <span class="material-symbols-outlined text-sm">touch_app</span> Glissez pour comparer
+          <!-- Stats -->
+          <div class="mt-4 grid grid-cols-3 gap-3">
+            <div class="bg-white rounded-xl p-4 text-center card-shadow">
+              <p class="font-display font-bold text-2xl text-primary">99%</p>
+              <p class="text-xs text-on-surface-variant">Clients récurrents</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center card-shadow">
+              <p class="font-display font-bold text-2xl text-primary">200+</p>
+              <p class="text-xs text-on-surface-variant">Ménages par mois</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center card-shadow">
+              <p class="font-display font-bold text-2xl text-primary">4.9★</p>
+              <p class="text-xs text-on-surface-variant">Note moyenne</p>
+            </div>
           </div>
         </div>
-
-        <!-- Floating stat -->
-        <div class="mt-4 flex gap-4">
-          <div class="flex-1 bg-white rounded-xl p-4 text-center card-shadow">
-            <p class="font-display font-bold text-2xl text-primary">99%</p>
-            <p class="text-xs text-on-surface-variant">Clients récurrents</p>
-          </div>
-          <div class="flex-1 bg-white rounded-xl p-4 text-center card-shadow">
-            <p class="font-display font-bold text-2xl text-primary">200+</p>
-            <p class="text-xs text-on-surface-variant">Ménages par mois</p>
-          </div>
-          <div class="flex-1 bg-white rounded-xl p-4 text-center card-shadow">
-            <p class="font-display font-bold text-2xl text-primary">4.9★</p>
-            <p class="text-xs text-on-surface-variant">Note moyenne</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <!-- ════════════════════════════════════════════
@@ -1219,31 +1204,31 @@
 
   // ── Before/After Slider ───────────────────────
   (function() {
-    const wrap = document.getElementById('ba-slider-wrap');
+    const wrap  = document.getElementById('ba-wrap');
     if (!wrap) return;
-    const clip   = document.getElementById('ba-before-clip');
-    const img    = document.getElementById('ba-before-img');
-    const div    = document.getElementById('ba-divider');
+    const before = document.getElementById('ba-before');
+    const line   = document.getElementById('ba-line');
     const hint   = document.getElementById('ba-hint');
+    let pct = 50;
     let dragging = false;
-    let hintHidden = false;
 
-    function setPos(x) {
+    function update(clientX) {
       const rect = wrap.getBoundingClientRect();
-      let pct = Math.min(Math.max((x - rect.left) / rect.width, 0.02), 0.98);
-      clip.style.width = (pct * 100) + '%';
-      img.style.width = (100 / pct) + '%';
-      div.style.left = (pct * 100) + '%';
-      if (!hintHidden) { hint.style.opacity = '0'; hintHidden = true; }
+      pct = Math.min(Math.max(((clientX - rect.left) / rect.width) * 100, 2), 98);
+      before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+      line.style.left = pct + '%';
+      if (hint) hint.style.opacity = '0';
     }
 
-    wrap.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); });
-    window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
-    window.addEventListener('mouseup', () => { dragging = false; });
+    // Init clip
+    before.style.clipPath = 'inset(0 50% 0 0)';
 
-    wrap.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
-    window.addEventListener('touchend', () => { dragging = false; });
+    wrap.addEventListener('mousedown',  e => { dragging = true; update(e.clientX); });
+    window.addEventListener('mousemove', e => { if (dragging) update(e.clientX); });
+    window.addEventListener('mouseup',   () => { dragging = false; });
+    wrap.addEventListener('touchstart',  e => { dragging = true; update(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', e => { if (dragging) update(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend',  () => { dragging = false; });
   })();
 
 
@@ -1251,8 +1236,8 @@
   function openPromo() {
     const overlay = document.getElementById('promo-overlay');
     const modal   = document.getElementById('promo-modal');
-    overlay.style.removeProperty('display');
-    overlay.style.display = 'flex';
+    overlay.classList.remove('hidden');
+    overlay.classList.add('flex');
     requestAnimationFrame(() => {
       modal.style.transform = 'scale(1)';
       modal.style.opacity   = '1';
@@ -1266,7 +1251,10 @@
     const modal   = document.getElementById('promo-modal');
     modal.style.transform = 'scale(0.9)';
     modal.style.opacity   = '0';
-    setTimeout(() => { overlay.style.display = 'none'; }, 300);
+    setTimeout(() => {
+      overlay.classList.add('hidden');
+      overlay.classList.remove('flex');
+    }, 300);
     document.body.style.overflow = '';
     sessionStorage.setItem('promo-seen', '1');
   }
@@ -1293,12 +1281,13 @@
   if (!sessionStorage.getItem('promo-seen')) {
     setTimeout(openPromo, 4000);
   }
+</script>
 
 
 <!-- ════════════════════════════════════════════
      POPUP PROMO
 ════════════════════════════════════════════ -->
-<div id="promo-overlay" class="fixed inset-0 z-[100] flex items-center justify-center p-4" style="display:none!important">
+<div id="promo-overlay" class="fixed inset-0 z-[100] items-center justify-center p-4 hidden">
   <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closePromo()"></div>
   <div id="promo-modal" class="relative bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden transform scale-90 opacity-0 transition-all duration-300">
     <!-- Green top band -->
