@@ -3,16 +3,24 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nos Services | Eco Pure – Entretien ménager Longueuil</title>
-  <meta name="description" content="Découvrez tous les services d'entretien ménager Eco Pure: résidentiel, commercial, grand ménage, déménagement et après-rénovation à Longueuil."/>
+  <title>Femme de ménage à Longueuil, fiable et impeccable | Eco Pure</title>
+  <meta name="description" content="Service d'entretien ménager écologique à Longueuil. Profitez d'une femme de ménage fiable pour votre grand ménage résidentiel ou commercial. Certifié ÉcoLogo, assurance complète, satisfaction 100%."/>
+  <meta name="keywords" content="femme de ménage Longueuil, entretien ménager Longueuil, ménage écologique, grand ménage, nettoyage résidentiel commercial"/>
+  <meta property="og:title" content="Eco Pure – Entretien ménager écologique à Longueuil"/>
+  <meta property="og:description" content="Ménage de précision, produits certifiés ÉcoLogo, satisfaction 100% garantie."/>
+  <meta property="og:type" content="website"/>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <script>
     tailwind.config = {
+      darkMode: "class",
       theme: {
         extend: {
           colors: {
@@ -20,8 +28,10 @@
             "primary-container": "#2d5a4c",
             "on-primary": "#ffffff",
             "on-primary-fixed": "#002118",
+            "on-primary-fixed-variant": "#214f41",
             "primary-fixed": "#bcedda",
             "primary-fixed-dim": "#a1d1bf",
+            "inverse-primary": "#a1d1bf",
             "secondary": "#566342",
             "secondary-container": "#d7e5bb",
             "secondary-fixed": "#dae8be",
@@ -30,18 +40,36 @@
             "on-secondary-fixed": "#141f05",
             "on-secondary-fixed-variant": "#3f4b2c",
             "on-secondary-container": "#5a6745",
+            "tertiary": "#393d24",
+            "tertiary-container": "#505439",
             "tertiary-fixed": "#e1e6c2",
+            "tertiary-fixed-dim": "#c5c9a7",
+            "on-tertiary": "#ffffff",
             "on-tertiary-fixed": "#1a1d07",
             "on-tertiary-fixed-variant": "#45492f",
+            "on-tertiary-container": "#c4c8a6",
             "surface": "#fcf9f8",
-            "surface-container-low": "#f6f3f2",
+            "surface-bright": "#fcf9f8",
+            "surface-dim": "#dcd9d9",
             "surface-container": "#f0eded",
+            "surface-container-low": "#f6f3f2",
+            "surface-container-high": "#eae7e7",
+            "surface-container-highest": "#e5e2e1",
+            "surface-container-lowest": "#ffffff",
             "surface-variant": "#e5e2e1",
+            "surface-tint": "#3a6758",
             "on-surface": "#1c1b1b",
             "on-surface-variant": "#404945",
+            "inverse-surface": "#313030",
+            "inverse-on-surface": "#f3f0ef",
             "background": "#fcf9f8",
+            "on-background": "#1c1b1b",
             "outline": "#717975",
             "outline-variant": "#c0c8c3",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a",
             "sage-wash": "#F1F4F0",
             "soft-grey": "#F8F9FA",
             "pure-white": "#FFFFFF",
@@ -50,20 +78,32 @@
           fontFamily: {
             "display": ["Montserrat", "sans-serif"],
             "body": ["Inter", "sans-serif"],
+          },
+          spacing: {
+            "section-sm": "64px",
+            "section-lg": "120px",
+            "margin-mobile": "16px",
+            "gutter": "24px",
           }
         }
       }
     }
   </script>
+
   <style>
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
     .filled { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+    /* Glass nav */
     .glass-nav {
       background: rgba(252, 249, 248, 0.85);
       backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
+
+    /* Card shadow */
     .card-shadow {
       box-shadow: 0 4px 24px rgba(19, 66, 53, 0.08);
       transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -72,55 +112,147 @@
       box-shadow: 0 8px 40px rgba(19, 66, 53, 0.14);
       transform: translateY(-4px);
     }
+
+    /* Hero overlay */
+    .hero-overlay {
+      background: linear-gradient(105deg, rgba(19,66,53,0.82) 0%, rgba(19,66,53,0.45) 55%, rgba(19,66,53,0.1) 100%);
+    }
+
+    /* Progress bar animation */
+    .progress-fill {
+      transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Room selector button */
+    .room-btn {
+      transition: all 0.2s ease;
+    }
+    .room-btn.active {
+      background-color: #134235;
+      color: white;
+      border-color: #134235;
+    }
+
+    /* Smooth scroll behavior */
+    html { scroll-behavior: smooth; }
+
+    /* Mobile menu */
+    #mobile-menu {
+      transition: all 0.3s ease;
+      max-height: 0;
+      overflow: hidden;
+    }
+    #mobile-menu.open {
+      max-height: 300px;
+    }
+
+    /* FAQ details animation */
+    details summary::marker { display: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] summary .expand-icon { transform: rotate(180deg); }
+    .expand-icon { transition: transform 0.3s ease; }
+
+    /* Fade in on scroll */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-    details summary::marker { display: none; }
-    details summary::-webkit-details-marker { display: none; }
-    details[open] .expand-icon { transform: rotate(180deg); }
-    .expand-icon { transition: transform 0.3s ease; }
-    #mobile-menu { transition: max-height 0.3s ease; max-height: 0; overflow: hidden; }
-    #mobile-menu.open { max-height: 300px; }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Before/After slider */
+    .before-after-container { position: relative; overflow: hidden; }
+    .before-label, .after-label {
+      position: absolute;
+      top: 12px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: white;
+    }
+    .before-label { left: 12px; background: rgba(51,51,51,0.85); }
+    .after-label { left: 12px; background: #134235; }
+
+    /* Toast notification */
+    #toast {
+      transform: translateX(120%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #toast.show { transform: translateX(0); }
+
+    /* Phone FAB pulse */
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+    .fab-pulse::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #becca3;
+      animation: pulse-ring 2s ease-out infinite;
+    }
+
+    /* Estimation result */
+    #estimation-result {
+      transition: all 0.4s ease;
+    }
   </style>
 </head>
 
-<body class="bg-background text-on-surface font-body">
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
 
-<!-- NAVIGATION (identique à index.html) -->
-<header id="navbar" class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/20 shadow-sm">
+<!-- ════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════ -->
+<header id="navbar" class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/20 shadow-sm transition-all duration-300">
   <div class="max-w-[1280px] mx-auto px-4 md:px-6 flex justify-between items-center h-20">
+    
+    <!-- Logo -->
     <a href="index.html" class="flex items-center gap-2">
       <div class="w-9 h-9 bg-primary rounded-lg flex items-center justify-center">
         <span class="material-symbols-outlined filled text-white text-xl">eco</span>
       </div>
       <span class="font-display font-bold text-primary text-xl tracking-tight">Eco<span class="text-secondary">Pure</span></span>
     </a>
+
+    <!-- Desktop nav -->
     <nav class="hidden md:flex items-center gap-8">
-      <a href="index.html" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">Accueil</a>
-      <a href="services.html" class="font-body font-medium text-primary border-b-2 border-primary pb-0.5">Services</a>
-      <a href="index.html#temoignages" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">Témoignages</a>
-      <a href="index.html#faq" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">FAQ</a>
+      <a href="#services" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">Services</a>
+      <a href="#resultats" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">Résultats</a>
+      <a href="#temoignages" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">Témoignages</a>
+      <a href="#faq" class="font-body font-medium text-on-surface-variant hover:text-primary transition-colors">FAQ</a>
     </nav>
+
+    <!-- CTA + burger -->
     <div class="flex items-center gap-3">
       <a href="tel:4505550123" class="hidden md:flex items-center gap-2 text-primary font-medium text-sm hover:underline">
         <span class="material-symbols-outlined text-base">call</span>(450) 555-0123
       </a>
-      <a href="index.html#soumission" class="bg-primary text-white px-5 py-2.5 rounded-full font-display font-semibold text-sm hover:bg-primary-container active:scale-95 transition-all">
+      <a href="#soumission" class="bg-primary text-white px-5 py-2.5 rounded-full font-display font-semibold text-sm hover:bg-primary-container active:scale-95 transition-all">
         Devis gratuit
       </a>
+      <!-- Mobile burger -->
       <button id="burger-btn" class="md:hidden p-2 rounded-lg hover:bg-surface-container" aria-label="Menu">
         <span class="material-symbols-outlined text-on-surface">menu</span>
       </button>
     </div>
   </div>
+
+  <!-- Mobile dropdown menu -->
   <div id="mobile-menu" class="md:hidden bg-surface border-t border-outline-variant/20">
     <nav class="flex flex-col p-4 gap-1">
-      <a href="index.html" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">Accueil</a>
-      <a href="index.html#temoignages" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">Témoignages</a>
-      <a href="index.html#faq" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">FAQ</a>
+      <a href="#services" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">Services</a>
+      <a href="#resultats" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">Résultats</a>
+      <a href="#temoignages" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">Témoignages</a>
+      <a href="#faq" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all">FAQ</a>
       <a href="tel:4505550123" class="mobile-nav-link px-4 py-3 rounded-lg font-medium text-primary flex items-center gap-2">
         <span class="material-symbols-outlined text-base">call</span>(450) 555-0123
       </a>
@@ -128,351 +260,713 @@
   </div>
 </header>
 
-<main class="pt-20">
 
-  <!-- PAGE HEADER -->
-  <section class="bg-primary py-14 md:py-20">
-    <div class="max-w-[1280px] mx-auto px-4 md:px-6 text-center">
-      <span class="inline-block text-xs font-bold tracking-widest text-primary-fixed uppercase mb-4">Ce qu'on offre</span>
-      <h1 class="font-display font-bold text-4xl md:text-5xl text-white mb-4">Nos Services Spécialisés</h1>
-      <p class="text-white/75 text-lg max-w-xl mx-auto">Un entretien ménager de précision, adapté à vos besoins, avec des produits écologiques certifiés.</p>
-    </div>
-  </section>
+<!-- ════════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════ -->
+<section class="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden pt-20">
+  <!-- Background image -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="https://raw.githubusercontent.com/sebastiensfornes-ux/entretienecopure/main/ecopure%20photo.png" 
+      alt="Entretien ménager professionnel Longueuil - Eco Pure"
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 hero-overlay"></div>
+  </div>
 
-  <!-- QUICK NAV -->
-  <nav class="bg-surface-container-low border-b border-outline-variant/15 sticky top-20 z-40 overflow-x-auto">
-    <div class="max-w-[1280px] mx-auto px-4 md:px-6">
-      <div class="flex gap-1 py-3 min-w-max">
-        <a href="#residentiel" class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:text-primary transition-all whitespace-nowrap">🏠 Résidentiel</a>
-        <a href="#commercial" class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:text-primary transition-all whitespace-nowrap">🏢 Commercial</a>
-        <a href="#grand-menage" class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:text-primary transition-all whitespace-nowrap">🧹 Grand Ménage</a>
-        <a href="#demenagement" class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:text-primary transition-all whitespace-nowrap">🚚 Déménagement</a>
-        <a href="#renovation" class="px-4 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:text-primary transition-all whitespace-nowrap">🔨 Après rénovation</a>
+  <div class="relative z-10 w-full max-w-[1280px] mx-auto px-4 md:px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+    
+    <!-- Left: Text -->
+    <div class="text-white max-w-xl">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/25 backdrop-blur-sm text-xs font-bold tracking-widest uppercase mb-6">
+        <span class="material-symbols-outlined filled text-secondary-fixed text-base">eco</span>
+        Service écologique certifié · Longueuil
+      </span>
+      <h1 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-6">
+        Femme de ménage à Longueuil,<br/>
+        <span class="text-primary-fixed">fiable et impeccable.</span>
+      </h1>
+      <p class="text-white/85 text-lg md:text-xl leading-relaxed mb-8">
+        L'excellence d'un entretien ménager qui respecte votre santé et l'environnement. Produits certifiés ÉcoLogo, équipe assurée, satisfaction 100% garantie.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#soumission" class="inline-flex items-center justify-center gap-2 bg-white text-primary px-7 py-4 rounded-xl font-display font-bold text-base shadow-lg hover:bg-primary-fixed active:scale-[0.98] transition-all">
+          <span class="material-symbols-outlined text-lg">calculate</span>
+          Soumission gratuite
+        </a>
+        <a href="tel:4505550123" class="inline-flex items-center justify-center gap-2 border-2 border-white/60 text-white px-7 py-4 rounded-xl font-display font-bold text-base hover:bg-white/10 active:scale-[0.98] transition-all backdrop-blur-sm">
+          <span class="material-symbols-outlined text-lg">call</span>
+          (450) 555-0123
+        </a>
+      </div>
+      <!-- Trust badges -->
+      <div class="flex flex-wrap gap-4 mt-8">
+        <div class="flex items-center gap-2 text-white/80 text-sm">
+          <span class="material-symbols-outlined filled text-secondary-fixed text-base">verified_user</span> Assurance complète
+        </div>
+        <div class="flex items-center gap-2 text-white/80 text-sm">
+          <span class="material-symbols-outlined filled text-secondary-fixed text-base">star</span> 4.9 · 200+ avis
+        </div>
+        <div class="flex items-center gap-2 text-white/80 text-sm">
+          <span class="material-symbols-outlined filled text-secondary-fixed text-base">thumb_up</span> Satisfaction garantie
+        </div>
       </div>
     </div>
-  </nav>
 
-  <!-- ── SERVICE 1: RÉSIDENTIEL ── -->
-  <section id="residentiel" class="py-16 md:py-24">
-    <div class="max-w-[1280px] mx-auto px-4 md:px-6">
-      <div class="flex flex-col lg:flex-row gap-12 items-center">
-        <div class="lg:w-1/2 fade-in">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container rounded-full text-xs font-bold text-on-secondary-container uppercase tracking-wider mb-6">
-            <span class="material-symbols-outlined filled text-base">house</span> Service Résidentiel
+    <!-- Right: Estimation form (desktop only – mobile shows it further down) -->
+    <div class="hidden lg:block">
+      <div class="bg-white rounded-2xl p-8 shadow-2xl border border-sage-wash/50">
+        <h3 class="font-display font-bold text-2xl text-primary mb-1">Calculez votre prix</h3>
+        <p class="text-on-surface-variant text-sm mb-6">Estimation précise en 30 secondes. Sans engagement.</p>
+        
+        <!-- Inline estimation form (desktop) -->
+        <div class="space-y-5">
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Type de ménage</label>
+            <select id="type-desktop" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary text-sm">
+              <option value="regulier">Entretien régulier</option>
+              <option value="grand">Grand ménage de printemps</option>
+              <option value="renovation">Après rénovation</option>
+              <option value="demenagement">Déménagement (entrée/sortie)</option>
+            </select>
           </div>
-          <h2 class="font-display font-bold text-3xl md:text-4xl text-primary mb-5">Un foyer impeccable, toujours</h2>
-          <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-            Notre service d'entretien résidentiel régulier est conçu pour maintenir votre maison ou appartement dans un état de propreté optimal, semaine après semaine, avec une attention méticuleuse aux détails.
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Chambres</label>
+              <input id="rooms-desktop" type="number" min="1" max="10" value="3" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary text-sm"/>
+            </div>
+            <div>
+              <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Fréquence</label>
+              <select id="freq-desktop" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary text-sm">
+                <option value="hebdo">Hebdomadaire</option>
+                <option value="biweekly">Aux 2 semaines</option>
+                <option value="mensuel">Mensuel</option>
+                <option value="unique">Une seule fois</option>
+              </select>
+            </div>
+          </div>
+          <div id="estimation-preview-desktop" class="hidden bg-sage-wash rounded-xl p-4 text-center">
+            <p class="text-xs text-on-surface-variant mb-1">Estimation approximative</p>
+            <p class="text-3xl font-display font-bold text-primary" id="price-desktop">—</p>
+            <p class="text-xs text-on-surface-variant mt-1" id="price-note-desktop"></p>
+          </div>
+          <button onclick="calculateDesktop()" class="w-full bg-primary text-white py-4 rounded-xl font-display font-bold text-base hover:bg-primary-container active:scale-[0.98] transition-all">
+            Voir mon estimation
+          </button>
+          <p class="text-center text-xs text-on-surface-variant">
+            Ou appelez-nous: <a href="tel:4505550123" class="text-primary font-semibold hover:underline">(450) 555-0123</a>
           </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     TRUST BAR
+════════════════════════════════════════════ -->
+<section class="bg-sage-wash py-10 border-y border-outline-variant/15">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+      <div class="flex flex-col items-center gap-3 fade-in">
+        <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm">
+          <span class="material-symbols-outlined filled text-primary text-2xl">verified_user</span>
+        </div>
+        <div>
+          <p class="font-display font-bold text-primary">Assurance Complète</p>
+          <p class="text-sm text-on-surface-variant">2 M$ de responsabilité civile</p>
+        </div>
+      </div>
+      <div class="flex flex-col items-center gap-3 fade-in" style="transition-delay: 0.1s">
+        <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm">
+          <span class="material-symbols-outlined filled text-primary text-2xl">eco</span>
+        </div>
+        <div>
+          <p class="font-display font-bold text-primary">Produits Certifiés</p>
+          <p class="text-sm text-on-surface-variant">100% ÉcoLogo, biodégradables</p>
+        </div>
+      </div>
+      <div class="flex flex-col items-center gap-3 fade-in" style="transition-delay: 0.2s">
+        <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-sm">
+          <span class="material-symbols-outlined filled text-primary text-2xl">stars</span>
+        </div>
+        <div>
+          <p class="font-display font-bold text-primary">Satisfaction 100%</p>
+          <p class="text-sm text-on-surface-variant">On repasse si c'est pas parfait</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     SERVICES SECTION
+════════════════════════════════════════════ -->
+<section id="services" class="py-16 md:py-28">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+    <div class="text-center mb-14 fade-in">
+      <span class="text-xs font-bold tracking-widest text-secondary uppercase">Ce qu'on offre</span>
+      <h2 class="font-display font-bold text-3xl md:text-5xl text-primary mt-2 mb-4">Nos Services Spécialisés</h2>
+      <div class="w-16 h-1 bg-secondary mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Service 1 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow border border-sage-wash/60 fade-in group cursor-pointer" onclick="window.location='services.html#residentiel'">
+        <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">house</span>
+        </div>
+        <h3 class="font-display font-bold text-xl text-primary mb-3">Résidentiel</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Un foyer étincelant avec une approche écologique pour toute la famille.</p>
+        <a href="services.html#residentiel" class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+          En savoir plus <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+      <!-- Service 2 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow border border-sage-wash/60 fade-in group cursor-pointer" style="transition-delay:0.1s" onclick="window.location='services.html#commercial'">
+        <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">business</span>
+        </div>
+        <h3 class="font-display font-bold text-xl text-primary mb-3">Commercial</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Des bureaux sains qui favorisent la productivité et le bien-être au travail.</p>
+        <a href="services.html#commercial" class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+          En savoir plus <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+      <!-- Service 3 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow border border-sage-wash/60 fade-in group cursor-pointer" style="transition-delay:0.2s" onclick="window.location='services.html#grand-menage'">
+        <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">cleaning_services</span>
+        </div>
+        <h3 class="font-display font-bold text-xl text-primary mb-3">Grand Ménage</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Une remise à neuf complète de votre espace, du plafond au plancher.</p>
+        <a href="services.html#grand-menage" class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+          En savoir plus <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+      <!-- Service 4 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow border border-sage-wash/60 fade-in group cursor-pointer" style="transition-delay:0.3s" onclick="window.location='services.html#demenagement'">
+        <div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
+          <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">local_shipping</span>
+        </div>
+        <h3 class="font-display font-bold text-xl text-primary mb-3">Déménagement</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Concentrez-vous sur vos cartons, on s'occupe de la propreté des lieux.</p>
+        <a href="services.html#demenagement" class="text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+          En savoir plus <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     BEFORE / AFTER SECTION
+════════════════════════════════════════════ -->
+<section id="resultats" class="py-16 md:py-28 bg-surface-container-low overflow-hidden">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <!-- Text side -->
+      <div class="lg:w-1/2 fade-in">
+        <span class="text-xs font-bold tracking-widest text-secondary uppercase">Nos résultats</span>
+        <h2 class="font-display font-bold text-3xl md:text-5xl text-primary mt-2 mb-6">Le résultat Eco Pure</h2>
+        <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+          Nous ne faisons pas que nettoyer. Nous restaurons la brillance naturelle de vos surfaces sans laisser de résidus chimiques nocifs.
+        </p>
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
               <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Cuisine et salle de bain</span>
             </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+            <span class="font-medium">Élimination des allergènes et poussières fines</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
               <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Aspirateur et vadrouille</span>
             </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+            <span class="font-medium">Surfaces en inox sans traces de doigts</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
               <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Dépoussiérage complet</span>
             </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
+            <span class="font-medium">Salles de bain désinfectées naturellement</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
               <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Produits ÉcoLogo fournis</span>
             </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Nettoyage des surfaces</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Flexibilité d'horaire</span>
+            <span class="font-medium">Produits sécuritaires pour enfants et animaux</span>
+          </li>
+        </ul>
+        <a href="#soumission" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
+          Obtenez une soumission <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Images side -->
+      <div class="lg:w-1/2 fade-in w-full">
+        <div class="grid grid-cols-2 gap-4 relative">
+          <div class="before-after-container rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80" alt="Salle de bain avant nettoyage" class="w-full h-64 md:h-80 object-cover grayscale"/>
+            <span class="before-label">AVANT</span>
+          </div>
+          <div class="before-after-container rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80" alt="Salle de bain après nettoyage Eco Pure" class="w-full h-64 md:h-80 object-cover"/>
+            <span class="after-label">APRÈS</span>
+          </div>
+        </div>
+        <!-- Floating stat badge -->
+        <div class="hidden md:block absolute -bottom-6 -right-6 bg-tertiary-fixed p-5 rounded-2xl shadow-lg">
+          <p class="font-display font-bold text-3xl text-on-tertiary-fixed">99%</p>
+          <p class="text-sm text-on-tertiary-fixed-variant">Clients récurrents</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════════ -->
+<section id="temoignages" class="py-16 md:py-28">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+    <div class="text-center mb-14 fade-in">
+      <span class="text-xs font-bold tracking-widest text-secondary uppercase">Témoignages</span>
+      <h2 class="font-display font-bold text-3xl md:text-5xl text-primary mt-2">Approuvé par vos voisins</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Testimonial 1 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow fade-in">
+        <div class="flex gap-0.5 mb-4">
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+        </div>
+        <p class="italic text-on-surface leading-relaxed mb-6">
+          "Le service est impeccable à chaque visite. J'apprécie énormément qu'ils utilisent des produits sans odeurs chimiques fortes pour mes enfants."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-secondary-container flex items-center justify-center">
+            <span class="font-display font-bold text-primary">ML</span>
+          </div>
+          <div>
+            <p class="font-bold text-sm">Marie-Eve L.</p>
+            <p class="text-xs text-on-surface-variant">Saint-Hubert, Longueuil</p>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow fade-in" style="transition-delay:0.1s">
+        <div class="flex gap-0.5 mb-4">
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+        </div>
+        <p class="italic text-on-surface leading-relaxed mb-6">
+          "Eco Pure gère nos bureaux depuis 6 mois. La fiabilité de l'équipe et la qualité du nettoyage sont largement supérieures à nos anciens prestataires."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-secondary-container flex items-center justify-center">
+            <span class="font-display font-bold text-primary">JB</span>
+          </div>
+          <div>
+            <p class="font-bold text-sm">Jean-François B.</p>
+            <p class="text-xs text-on-surface-variant">Vieux-Longueuil</p>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="bg-white p-7 rounded-2xl card-shadow fade-in" style="transition-delay:0.2s">
+        <div class="flex gap-0.5 mb-4">
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+          <span class="material-symbols-outlined filled text-secondary text-xl">star</span>
+        </div>
+        <p class="italic text-on-surface leading-relaxed mb-6">
+          "Leur grand ménage avant mon déménagement était parfait. La maison sentait bon le propre, sans aucune odeur toxique. Je recommande chaudement!"
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-secondary-container flex items-center justify-center">
+            <span class="font-display font-bold text-primary">SR</span>
+          </div>
+          <div>
+            <p class="font-bold text-sm">Sophie R.</p>
+            <p class="text-xs text-on-surface-variant">Greenfield Park, Longueuil</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     FORMULAIRE SOUMISSION (multi-étapes)
+════════════════════════════════════════════ -->
+<section id="soumission" class="py-16 md:py-28 bg-primary">
+  <div class="max-w-[600px] mx-auto px-4 md:px-6">
+    
+    <!-- Section header -->
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold tracking-widest text-primary-fixed uppercase">Devis en ligne</span>
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-white mt-2 mb-3">Obtenez votre soumission gratuite</h2>
+      <p class="text-white/75">Réponse garantie en moins de 2h en jours ouvrables</p>
+    </div>
+
+    <!-- Form card -->
+    <div class="bg-white rounded-2xl p-7 md:p-10 shadow-2xl">
+      
+      <!-- Progress bar -->
+      <div class="mb-8">
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-xs font-bold text-primary" id="step-label">Étape 1 sur 3</span>
+          <span class="text-xs font-bold text-primary" id="step-percent">33%</span>
+        </div>
+        <div class="w-full bg-soft-grey h-2 rounded-full overflow-hidden">
+          <div id="progress-bar" class="bg-primary h-full rounded-full progress-fill" style="width: 33%"></div>
+        </div>
+        <div class="flex justify-between mt-2">
+          <span class="text-xs text-on-surface-variant" id="step-name">Votre ménage</span>
+          <span class="text-xs text-on-surface-variant" id="step-remaining">2 étapes restantes</span>
+        </div>
+      </div>
+
+      <!-- STEP 1: Type & détails -->
+      <div id="step-1" class="step-panel">
+        <h3 class="font-display font-bold text-xl text-primary mb-6">Votre ménage</h3>
+        
+        <div class="space-y-5">
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Type de ménage</label>
+            <select id="form-type" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary">
+              <option value="regulier">Entretien régulier</option>
+              <option value="grand">Grand ménage de printemps</option>
+              <option value="renovation">Après rénovation</option>
+              <option value="demenagement">Déménagement (entrée/sortie)</option>
+              <option value="commercial">Commercial / Bureaux</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-3">Nombre de pièces</label>
+            <div class="grid grid-cols-4 gap-2">
+              <button type="button" class="room-btn border border-outline py-3 rounded-xl text-sm font-bold hover:border-primary transition-all" data-rooms="1-3">1–3</button>
+              <button type="button" class="room-btn border border-outline py-3 rounded-xl text-sm font-bold hover:border-primary transition-all active" data-rooms="4-6">4–6</button>
+              <button type="button" class="room-btn border border-outline py-3 rounded-xl text-sm font-bold hover:border-primary transition-all" data-rooms="7-9">7–9</button>
+              <button type="button" class="room-btn border border-outline py-3 rounded-xl text-sm font-bold hover:border-primary transition-all" data-rooms="10+">10+</button>
             </div>
           </div>
-          <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 mb-6">
-            <p class="text-xs text-on-surface-variant mb-1 uppercase font-bold tracking-wider">À partir de</p>
-            <p class="text-3xl font-display font-bold text-primary">128$<span class="text-lg font-medium text-on-surface-variant">/visite</span></p>
-            <p class="text-sm text-on-surface-variant mt-1">Tarif récurrent semaine, 1–3 pièces</p>
+
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Fréquence souhaitée</label>
+            <select id="form-freq" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary">
+              <option value="hebdo">Chaque semaine</option>
+              <option value="biweekly">Aux deux semaines</option>
+              <option value="mensuel">Une fois par mois</option>
+              <option value="unique">Une seule fois</option>
+            </select>
           </div>
-          <a href="index.html#soumission" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
-            Obtenir un devis <span class="material-symbols-outlined">arrow_forward</span>
+        </div>
+
+        <button onclick="goStep(2)" class="w-full bg-primary text-white py-4 rounded-xl font-display font-bold mt-7 hover:bg-primary-container active:scale-[0.98] transition-all">
+          Continuer <span class="material-symbols-outlined align-middle text-base ml-1">arrow_forward</span>
+        </button>
+      </div>
+
+      <!-- STEP 2: Coordonnées -->
+      <div id="step-2" class="step-panel hidden">
+        <h3 class="font-display font-bold text-xl text-primary mb-6">Vos coordonnées</h3>
+        
+        <div class="space-y-5">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Prénom</label>
+              <input id="form-firstname" type="text" placeholder="Sophie" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary placeholder-on-surface-variant/50"/>
+            </div>
+            <div>
+              <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Nom</label>
+              <input id="form-lastname" type="text" placeholder="Leblanc" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary placeholder-on-surface-variant/50"/>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Téléphone</label>
+            <input id="form-phone" type="tel" placeholder="(450) 555-0000" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary placeholder-on-surface-variant/50"/>
+          </div>
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Courriel</label>
+            <input id="form-email" type="email" placeholder="sophie@email.com" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary placeholder-on-surface-variant/50"/>
+          </div>
+          <div>
+            <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Ville / Secteur</label>
+            <select id="form-city" class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary">
+              <option>Vieux-Longueuil</option>
+              <option>Saint-Hubert</option>
+              <option>Greenfield Park</option>
+              <option>Brossard</option>
+              <option>Saint-Lambert</option>
+              <option>Autre secteur Rive-Sud</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex gap-3 mt-7">
+          <button onclick="goStep(1)" class="flex-1 border-2 border-outline py-4 rounded-xl font-display font-bold text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+            <span class="material-symbols-outlined align-middle text-base mr-1">arrow_back</span> Retour
+          </button>
+          <button onclick="goStep(3)" class="flex-[2] bg-primary text-white py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
+            Continuer <span class="material-symbols-outlined align-middle text-base ml-1">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Confirmation + estimation -->
+      <div id="step-3" class="step-panel hidden">
+        <h3 class="font-display font-bold text-xl text-primary mb-6">Confirmation & estimation</h3>
+
+        <!-- Summary -->
+        <div class="bg-sage-wash rounded-xl p-5 mb-6">
+          <h4 class="text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-4">Récapitulatif</h4>
+          <div class="space-y-2 text-sm" id="summary-content">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+
+        <!-- Price estimate -->
+        <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 text-center mb-6">
+          <p class="text-xs text-on-surface-variant mb-1">Estimation approximative</p>
+          <p class="text-4xl font-display font-bold text-primary mb-1" id="final-price">—</p>
+          <p class="text-xs text-on-surface-variant" id="final-price-note">par visite</p>
+          <p class="text-xs text-primary/70 mt-2">* Prix confirmé par notre équipe dans les 2h</p>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-2">Notes / Informations supplémentaires</label>
+          <textarea id="form-notes" rows="3" placeholder="Animaux domestiques, accès, préférences particulières..." class="w-full bg-soft-grey border-none rounded-xl p-4 text-on-surface focus:ring-2 focus:ring-primary resize-none placeholder-on-surface-variant/50"></textarea>
+        </div>
+
+        <div class="flex items-start gap-3 mt-4 mb-6">
+          <input type="checkbox" id="form-consent" class="mt-1 w-4 h-4 accent-primary rounded"/>
+          <label for="form-consent" class="text-xs text-on-surface-variant leading-relaxed">
+            J'accepte d'être contacté(e) par Eco Pure pour mon estimation. Je comprends que mes données ne seront pas partagées avec des tiers.
+          </label>
+        </div>
+
+        <div class="flex gap-3">
+          <button onclick="goStep(2)" class="flex-1 border-2 border-outline py-4 rounded-xl font-display font-bold text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+            <span class="material-symbols-outlined align-middle text-base mr-1">arrow_back</span> Retour
+          </button>
+          <button onclick="submitForm()" class="flex-[2] bg-primary text-white py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all" id="submit-btn">
+            Envoyer ma demande <span class="material-symbols-outlined align-middle text-base ml-1">send</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div id="step-success" class="step-panel hidden text-center py-8">
+        <div class="w-20 h-20 rounded-full bg-secondary-container flex items-center justify-center mx-auto mb-6">
+          <span class="material-symbols-outlined filled text-primary text-4xl">check_circle</span>
+        </div>
+        <h3 class="font-display font-bold text-2xl text-primary mb-3">Demande envoyée!</h3>
+        <p class="text-on-surface-variant mb-2">Merci pour votre confiance.</p>
+        <p class="text-on-surface-variant text-sm mb-8">Notre équipe vous contactera dans les <strong class="text-primary">2 heures ouvrables</strong> pour confirmer votre soumission.</p>
+        <a href="tel:4505550123" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container transition-all">
+          <span class="material-symbols-outlined">call</span> Nous appeler
+        </a>
+      </div>
+
+    </div><!-- end form card -->
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     FAQ SECTION
+════════════════════════════════════════════ -->
+<section id="faq" class="py-16 md:py-28 bg-soft-grey">
+  <div class="max-w-[800px] mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 fade-in">
+      <span class="text-xs font-bold tracking-widest text-secondary uppercase">FAQ</span>
+      <h2 class="font-display font-bold text-3xl md:text-5xl text-primary mt-2">Vos questions</h2>
+    </div>
+    <div class="space-y-3">
+      <details class="group bg-white rounded-2xl overflow-hidden shadow-sm fade-in" open>
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+          <span class="font-display font-semibold text-primary">Quels sont vos tarifs à Longueuil?</span>
+          <span class="material-symbols-outlined expand-icon text-on-surface-variant">expand_more</span>
+        </summary>
+        <div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed">
+          Nos prix sont basés sur le type de service, le nombre de pièces et la fréquence. Pour un appartement 4½ à Longueuil, les tarifs débutent à 85$ par visite hebdomadaire. Utilisez notre calculateur ci-dessus pour obtenir une estimation personnalisée.
+        </div>
+      </details>
+      <details class="group bg-white rounded-2xl overflow-hidden shadow-sm fade-in">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+          <span class="font-display font-semibold text-primary">Fournissez-vous les produits de nettoyage?</span>
+          <span class="material-symbols-outlined expand-icon text-on-surface-variant">expand_more</span>
+        </summary>
+        <div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed">
+          Oui! Eco Pure apporte ses propres produits certifiés ÉcoLogo et Green Seal. Tous nos produits sont sans phosphate, biodégradables, et sécuritaires pour les animaux et les enfants.
+        </div>
+      </details>
+      <details class="group bg-white rounded-2xl overflow-hidden shadow-sm fade-in">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+          <span class="font-display font-semibold text-primary">Êtes-vous assurés en cas de bris?</span>
+          <span class="material-symbols-outlined expand-icon text-on-surface-variant">expand_more</span>
+        </summary>
+        <div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed">
+          Absolument. Eco Pure détient une assurance responsabilité civile complète de 2 millions de dollars. Tous nos employés font l'objet d'une vérification rigoureuse des antécédents judiciaires.
+        </div>
+      </details>
+      <details class="group bg-white rounded-2xl overflow-hidden shadow-sm fade-in">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+          <span class="font-display font-semibold text-primary">Quelles zones de la Rive-Sud desservez-vous?</span>
+          <span class="material-symbols-outlined expand-icon text-on-surface-variant">expand_more</span>
+        </summary>
+        <div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed">
+          Nous couvrons Longueuil (Vieux-Longueuil, Saint-Hubert, Greenfield Park), Brossard, Saint-Lambert, LeMoyne et les environs immédiats. Contactez-nous pour vérifier votre secteur spécifique.
+        </div>
+      </details>
+      <details class="group bg-white rounded-2xl overflow-hidden shadow-sm fade-in">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+          <span class="font-display font-semibold text-primary">Que se passe-t-il si je ne suis pas satisfait(e)?</span>
+          <span class="material-symbols-outlined expand-icon text-on-surface-variant">expand_more</span>
+        </summary>
+        <div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed">
+          Nous repassons gratuitement dans les 24h si vous n'êtes pas entièrement satisfait(e). C'est notre engagement de qualité absolue.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer class="bg-primary text-white py-16">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-9 h-9 bg-white/15 rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined filled text-primary-fixed text-xl">eco</span>
+          </div>
+          <span class="font-display font-bold text-xl">Eco<span class="text-primary-fixed">Pure</span></span>
+        </div>
+        <p class="text-white/70 text-sm leading-relaxed mb-5">
+          L'excellence en entretien écologique pour la Rive-Sud. Purifier votre espace, préserver votre santé.
+        </p>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="Facebook">
+            <span class="material-symbols-outlined text-base">language</span>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors" aria-label="Instagram">
+            <span class="material-symbols-outlined text-base">photo_camera</span>
           </a>
         </div>
-        <div class="lg:w-1/2 fade-in">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Nettoyage résidentiel Longueuil" class="w-full h-72 md:h-96 object-cover rounded-2xl shadow-lg"/>
-        </div>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="font-display font-bold mb-5">Services</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a href="services.html#residentiel" class="hover:text-white transition-colors">Nettoyage Résidentiel</a></li>
+          <li><a href="services.html#commercial" class="hover:text-white transition-colors">Bureaux & Commerces</a></li>
+          <li><a href="services.html#grand-menage" class="hover:text-white transition-colors">Grand Ménage de Printemps</a></li>
+          <li><a href="services.html#demenagement" class="hover:text-white transition-colors">Entrée/Sortie Logement</a></li>
+          <li><a href="services.html#renovation" class="hover:text-white transition-colors">Après Construction/Rénovation</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-display font-bold mb-5">Contact Longueuil</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary-fixed text-base flex-shrink-0 mt-0.5">location_on</span>
+            <span>Longueuil (Vieux-Longueuil, Saint-Hubert, Greenfield Park)</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary-fixed text-base">call</span>
+            <a href="tel:4505550123" class="hover:text-white transition-colors">(450) 555-0123</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary-fixed text-base">mail</span>
+            <a href="mailto:bonjour@ecopure.ca" class="hover:text-white transition-colors">bonjour@ecopure.ca</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Liens -->
+      <div>
+        <h4 class="font-display font-bold mb-5">Liens Rapides</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a href="index.html" class="hover:text-white transition-colors">Accueil</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Nos Services</a></li>
+          <li><a href="#temoignages" class="hover:text-white transition-colors">Témoignages</a></li>
+          <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="#soumission" class="hover:text-white transition-colors">Devis gratuit</a></li>
+        </ul>
       </div>
     </div>
-  </section>
 
-  <!-- Divider -->
-  <div class="max-w-[1280px] mx-auto px-4 md:px-6"><div class="border-t border-outline-variant/30"></div></div>
-
-  <!-- ── SERVICE 2: COMMERCIAL ── -->
-  <section id="commercial" class="py-16 md:py-24 bg-sage-wash/30">
-    <div class="max-w-[1280px] mx-auto px-4 md:px-6">
-      <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
-        <div class="lg:w-1/2 fade-in">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container rounded-full text-xs font-bold text-on-secondary-container uppercase tracking-wider mb-6">
-            <span class="material-symbols-outlined filled text-base">business</span> Service Commercial
-          </div>
-          <h2 class="font-display font-bold text-3xl md:text-4xl text-primary mb-5">Des bureaux qui inspirent confiance</h2>
-          <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-            Un environnement de travail propre améliore la productivité et l'image de votre entreprise. Nos équipes interviennent selon votre horaire, sans perturber vos activités.
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Bureaux & salles de réunion</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Espaces communs & cuisines</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Désinfection des surfaces</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Intervention tôt le matin</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Contrat flexible</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Rapport d'intervention</span>
-            </div>
-          </div>
-          <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 mb-6">
-            <p class="text-xs text-on-surface-variant mb-1 uppercase font-bold tracking-wider">À partir de</p>
-            <p class="text-3xl font-display font-bold text-primary">200$<span class="text-lg font-medium text-on-surface-variant">/visite</span></p>
-            <p class="text-sm text-on-surface-variant mt-1">Tarif commercial, selon superficie</p>
-          </div>
-          <a href="index.html#soumission" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
-            Obtenir un devis <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
-        </div>
-        <div class="lg:w-1/2 fade-in">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80" alt="Nettoyage commercial bureaux Longueuil" class="w-full h-72 md:h-96 object-cover rounded-2xl shadow-lg"/>
-        </div>
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+      <p>© 2024 Eco Pure Longueuil. Tous droits réservés.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white transition-colors">Politique de confidentialité</a>
+        <a href="#" class="hover:text-white transition-colors">Mentions légales</a>
       </div>
     </div>
-  </section>
-
-  <!-- ── SERVICE 3: GRAND MÉNAGE ── -->
-  <section id="grand-menage" class="py-16 md:py-24">
-    <div class="max-w-[1280px] mx-auto px-4 md:px-6">
-      <div class="flex flex-col lg:flex-row gap-12 items-center">
-        <div class="lg:w-1/2 fade-in">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container rounded-full text-xs font-bold text-on-secondary-container uppercase tracking-wider mb-6">
-            <span class="material-symbols-outlined filled text-base">cleaning_services</span> Grand Ménage
-          </div>
-          <h2 class="font-display font-bold text-3xl md:text-4xl text-primary mb-5">Une remise à neuf totale</h2>
-          <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-            Notre grand ménage saisonnier est un nettoyage en profondeur de A à Z. Parfait au printemps ou à l'automne, pour retrouver un espace frais et purifié.
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Armoires intérieures vidées</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Appareils nettoyés en profondeur</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Cadrages & fenêtres</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Plinthes & recoins</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Durée: 4–8 heures</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Équipe de 2 personnes</span>
-            </div>
-          </div>
-          <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 mb-6">
-            <p class="text-xs text-on-surface-variant mb-1 uppercase font-bold tracking-wider">À partir de</p>
-            <p class="text-3xl font-display font-bold text-primary">300$<span class="text-lg font-medium text-on-surface-variant">/intervention</span></p>
-            <p class="text-sm text-on-surface-variant mt-1">Service unique, selon superficie</p>
-          </div>
-          <a href="index.html#soumission" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
-            Obtenir un devis <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
-        </div>
-        <div class="lg:w-1/2 fade-in">
-          <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=700&q=80" alt="Grand ménage de printemps Longueuil" class="w-full h-72 md:h-96 object-cover rounded-2xl shadow-lg"/>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SERVICE 4: DÉMÉNAGEMENT ── -->
-  <section id="demenagement" class="py-16 md:py-24 bg-sage-wash/30">
-    <div class="max-w-[1280px] mx-auto px-4 md:px-6">
-      <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
-        <div class="lg:w-1/2 fade-in">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container rounded-full text-xs font-bold text-on-secondary-container uppercase tracking-wider mb-6">
-            <span class="material-symbols-outlined filled text-base">local_shipping</span> Déménagement
-          </div>
-          <h2 class="font-display font-bold text-3xl md:text-4xl text-primary mb-5">Partez ou arrivez dans un espace purifié</h2>
-          <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-            Que vous quittiez votre logement ou emménagiez dans un nouveau chez-vous, notre équipe s'assure que l'espace est impeccable pour vous ou pour les futurs occupants.
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Nettoyage sortie locataire</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Préparation nouvel arrivant</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Désinfection complète</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Nettoyage des armoires</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Disponibilité 7 jours/7</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-white rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Certificat de nettoyage</span>
-            </div>
-          </div>
-          <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 mb-6">
-            <p class="text-xs text-on-surface-variant mb-1 uppercase font-bold tracking-wider">À partir de</p>
-            <p class="text-3xl font-display font-bold text-primary">325$<span class="text-lg font-medium text-on-surface-variant">/intervention</span></p>
-            <p class="text-sm text-on-surface-variant mt-1">Service unique, selon superficie</p>
-          </div>
-          <a href="index.html#soumission" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
-            Obtenir un devis <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
-        </div>
-        <div class="lg:w-1/2 fade-in">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80" alt="Nettoyage déménagement Longueuil" class="w-full h-72 md:h-96 object-cover rounded-2xl shadow-lg"/>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SERVICE 5: APRÈS RÉNOVATION ── -->
-  <section id="renovation" class="py-16 md:py-24">
-    <div class="max-w-[1280px] mx-auto px-4 md:px-6">
-      <div class="flex flex-col lg:flex-row gap-12 items-center">
-        <div class="lg:w-1/2 fade-in">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container rounded-full text-xs font-bold text-on-secondary-container uppercase tracking-wider mb-6">
-            <span class="material-symbols-outlined filled text-base">construction</span> Après Rénovation
-          </div>
-          <h2 class="font-display font-bold text-3xl md:text-4xl text-primary mb-5">Profitez de vos rénovations dès le premier jour</h2>
-          <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
-            Les chantiers de construction laissent poussière, plâtre et débris partout. Notre équipe spécialisée remet votre espace à zéro pour que vous puissiez en profiter immédiatement.
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Enlèvement poussière fine</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Nettoyage résidus de plâtre</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Protection des surfaces neuves</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Nettoyage fenêtres & vitres</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Aspirateur HEPA professionnel</span>
-            </div>
-            <div class="flex items-center gap-3 p-3 bg-sage-wash rounded-xl">
-              <span class="material-symbols-outlined filled text-primary text-base">check_circle</span>
-              <span class="text-sm font-medium">Disponibilité rapide</span>
-            </div>
-          </div>
-          <div class="bg-primary/5 border border-primary/20 rounded-xl p-5 mb-6">
-            <p class="text-xs text-on-surface-variant mb-1 uppercase font-bold tracking-wider">À partir de</p>
-            <p class="text-3xl font-display font-bold text-primary">450$<span class="text-lg font-medium text-on-surface-variant">/intervention</span></p>
-            <p class="text-sm text-on-surface-variant mt-1">Devis personnalisé selon l'ampleur</p>
-          </div>
-          <a href="index.html#soumission" class="inline-flex items-center gap-2 bg-primary text-white px-7 py-4 rounded-xl font-display font-bold hover:bg-primary-container active:scale-[0.98] transition-all">
-            Obtenir un devis <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
-        </div>
-        <div class="lg:w-1/2 fade-in">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Nettoyage après rénovation Longueuil" class="w-full h-72 md:h-96 object-cover rounded-2xl shadow-lg"/>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BAND -->
-  <section class="bg-primary py-14 text-center">
-    <div class="max-w-[600px] mx-auto px-4">
-      <h2 class="font-display font-bold text-3xl text-white mb-4">Prêt(e) à commencer?</h2>
-      <p class="text-white/75 mb-8">Obtenez votre soumission gratuite en ligne en moins de 2 minutes.</p>
-      <a href="index.html#soumission" class="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-xl font-display font-bold text-lg hover:bg-primary-fixed active:scale-[0.98] transition-all shadow-lg">
-        <span class="material-symbols-outlined">calculate</span> Calculer mon prix
-      </a>
-    </div>
-  </section>
-
-</main>
-
-<!-- FOOTER -->
-<footer class="bg-primary text-white py-12">
-  <div class="max-w-[1280px] mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-    <div class="flex items-center gap-2">
-      <div class="w-9 h-9 bg-white/15 rounded-lg flex items-center justify-center">
-        <span class="material-symbols-outlined filled text-primary-fixed text-xl">eco</span>
-      </div>
-      <span class="font-display font-bold text-xl">Eco<span class="text-primary-fixed">Pure</span></span>
-    </div>
-    <nav class="flex flex-wrap gap-6 text-sm text-white/70">
-      <a href="index.html" class="hover:text-white transition-colors">Accueil</a>
-      <a href="index.html#soumission" class="hover:text-white transition-colors">Devis gratuit</a>
-      <a href="index.html#temoignages" class="hover:text-white transition-colors">Témoignages</a>
-      <a href="index.html#faq" class="hover:text-white transition-colors">FAQ</a>
-    </nav>
-    <p class="text-xs text-white/50">© 2024 Eco Pure Longueuil</p>
   </div>
 </footer>
 
-<!-- FAB mobile -->
+
+<!-- ════════════════════════════════════════════
+     FAB (mobile phone button)
+════════════════════════════════════════════ -->
 <div class="fixed bottom-6 right-6 z-40 md:hidden">
-  <a href="tel:4505550123" class="w-16 h-16 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-2xl active:scale-90 transition-transform" aria-label="Appeler">
-    <span class="material-symbols-outlined text-3xl">call</span>
+  <a href="tel:4505550123" class="relative w-16 h-16 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-2xl active:scale-90 transition-transform fab-pulse" aria-label="Appeler Eco Pure">
+    <span class="material-symbols-outlined text-3xl relative z-10">call</span>
   </a>
 </div>
 
+
+<!-- ════════════════════════════════════════════
+     TOAST NOTIFICATION
+════════════════════════════════════════════ -->
+<div id="toast" class="fixed bottom-24 right-4 z-50 bg-charcoal text-white px-5 py-3 rounded-xl shadow-xl flex items-center gap-3 text-sm font-medium">
+  <span class="material-symbols-outlined filled text-secondary-fixed">check_circle</span>
+  <span id="toast-msg">Action réussie</span>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
 <script>
-  // Burger menu
+  // ── Mobile burger menu ──────────────────────
   const burgerBtn = document.getElementById('burger-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  
   burgerBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('open');
-    burgerBtn.querySelector('.material-symbols-outlined').textContent = 
-      mobileMenu.classList.contains('open') ? 'close' : 'menu';
+    const icon = burgerBtn.querySelector('.material-symbols-outlined');
+    icon.textContent = mobileMenu.classList.contains('open') ? 'close' : 'menu';
   });
+
+  // Close menu on nav link click
   document.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
@@ -480,29 +974,212 @@
     });
   });
 
-  // Scroll fade-in
-  const observer = new IntersectionObserver(entries => {
+
+  // ── Navbar scroll behavior ──────────────────
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('shadow-md');
+    } else {
+      navbar.classList.remove('shadow-md');
+    }
+  });
+
+
+  // ── Scroll fade-in animation ─────────────────
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(el => {
-      if (el.isIntersecting) { el.target.classList.add('visible'); observer.unobserve(el.target); }
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+        observer.unobserve(el.target);
+      }
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  fadeEls.forEach(el => observer.observe(el));
 
-  // Highlight active quick-nav link
-  const sections = document.querySelectorAll('section[id]');
-  const quickLinks = document.querySelectorAll('nav a[href^="#"]');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+
+  // ── Room selector buttons ─────────────────────
+  let selectedRooms = '4-6';
+  document.querySelectorAll('.room-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.room-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedRooms = btn.dataset.rooms;
     });
-    quickLinks.forEach(link => {
-      link.classList.remove('bg-secondary-container', 'text-primary', 'font-semibold');
-      if (link.getAttribute('href') === '#' + current) {
-        link.classList.add('bg-secondary-container', 'text-primary', 'font-semibold');
+  });
+
+
+  // ── Pricing calculator ────────────────────────
+  // Prix de base par type, +20$ par pièce à partir de la 5e
+  const BASE_PRICES = {
+    regulier:     128,
+    commercial:   200,
+    grand:        300,
+    demenagement: 325,
+    renovation:   450,
+  };
+  const FREQ_DISCOUNT = {
+    hebdo: 0.85, biweekly: 0.90, mensuel: 0.95, unique: 1.0
+  };
+  const FREQ_LABELS = {
+    hebdo: '/semaine', biweekly: '/2 semaines', mensuel: '/mois', unique: '(service unique)'
+  };
+
+  function getPrice(type, rooms, freq) {
+    let r = 4;
+    if (rooms === '1-3') r = 3;
+    else if (rooms === '4-6') r = 5;
+    else if (rooms === '7-9') r = 8;
+    else if (rooms === '10+') r = 11;
+    else r = parseInt(rooms) || 4;
+
+    const base = (BASE_PRICES[type] ?? 128) + Math.max(0, r - 4) * 20;
+    const disc = FREQ_DISCOUNT[freq] ?? 1;
+    return {
+      price: Math.round(base * disc),
+      label: FREQ_LABELS[freq] ?? '',
+      isRecurring: freq !== 'unique'
+    };
+  }
+
+  function calculateDesktop() {
+    const type = document.getElementById('type-desktop').value;
+    const rooms = document.getElementById('rooms-desktop').value;
+    const freq = document.getElementById('freq-desktop').value;
+
+    // Map rooms number to bracket
+    const r = parseInt(rooms);
+    let bracket = '1-3';
+    if (r >= 4 && r <= 6) bracket = '4-6';
+    else if (r >= 7 && r <= 9) bracket = '7-9';
+    else if (r >= 10) bracket = '10+';
+
+    const { price, label, isRecurring } = getPrice(type, bracket, freq);
+    
+    document.getElementById('price-desktop').textContent = price + '$';
+    document.getElementById('price-note-desktop').textContent = label + (isRecurring ? ' · tarif récurrent' : '');
+    document.getElementById('estimation-preview-desktop').classList.remove('hidden');
+  }
+
+  // Live update desktop form on change
+  ['type-desktop','rooms-desktop','freq-desktop'].forEach(id => {
+    document.getElementById(id)?.addEventListener('change', () => {
+      if (!document.getElementById('estimation-preview-desktop').classList.contains('hidden')) {
+        calculateDesktop();
       }
     });
   });
+
+
+  // ── Multi-step form ───────────────────────────
+  const steps = ['step-1', 'step-2', 'step-3', 'step-success'];
+  const stepConfig = [
+    { label: 'Étape 1 sur 3', percent: '33%', width: '33%', name: 'Votre ménage', remaining: '2 étapes restantes' },
+    { label: 'Étape 2 sur 3', percent: '66%', width: '66%', name: 'Vos coordonnées', remaining: '1 étape restante' },
+    { label: 'Étape 3 sur 3', percent: '100%', width: '100%', name: 'Confirmation', remaining: 'Dernière étape' },
+  ];
+
+  let currentStep = 1;
+
+  function goStep(n) {
+    if (n === 2 && !validateStep1()) return;
+    if (n === 3 && !validateStep2()) return;
+    if (n === 3) buildSummary();
+
+    // Hide all panels
+    steps.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.add('hidden');
+    });
+
+    // Show target panel
+    const targetId = n <= 3 ? `step-${n}` : 'step-success';
+    document.getElementById(targetId)?.classList.remove('hidden');
+
+    // Update progress
+    if (n <= 3) {
+      const cfg = stepConfig[n - 1];
+      document.getElementById('step-label').textContent = cfg.label;
+      document.getElementById('step-percent').textContent = cfg.percent;
+      document.getElementById('progress-bar').style.width = cfg.width;
+      document.getElementById('step-name').textContent = cfg.name;
+      document.getElementById('step-remaining').textContent = cfg.remaining;
+    }
+
+    currentStep = n;
+
+    // Scroll form into view on mobile
+    document.getElementById('soumission').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function validateStep1() {
+    // Basic — rooms selected already by default
+    return true;
+  }
+
+  function validateStep2() {
+    const phone = document.getElementById('form-phone').value.trim();
+    const email = document.getElementById('form-email').value.trim();
+    const fname = document.getElementById('form-firstname').value.trim();
+    if (!fname) { showToast('Veuillez entrer votre prénom'); return false; }
+    if (!phone && !email) { showToast('Téléphone ou courriel requis'); return false; }
+    return true;
+  }
+
+  function buildSummary() {
+    const type = document.getElementById('form-type');
+    const freq = document.getElementById('form-freq');
+    const fname = document.getElementById('form-firstname').value;
+    const lname = document.getElementById('form-lastname').value;
+    const city = document.getElementById('form-city').value;
+
+    const typeText = type.options[type.selectedIndex].text;
+    const freqText = freq.options[freq.selectedIndex].text;
+
+    const summaryEl = document.getElementById('summary-content');
+    summaryEl.innerHTML = `
+      <div class="flex justify-between"><span class="text-on-surface-variant">Nom</span><span class="font-medium">${fname} ${lname}</span></div>
+      <div class="flex justify-between"><span class="text-on-surface-variant">Service</span><span class="font-medium">${typeText}</span></div>
+      <div class="flex justify-between"><span class="text-on-surface-variant">Pièces</span><span class="font-medium">${selectedRooms}</span></div>
+      <div class="flex justify-between"><span class="text-on-surface-variant">Fréquence</span><span class="font-medium">${freqText}</span></div>
+      <div class="flex justify-between"><span class="text-on-surface-variant">Secteur</span><span class="font-medium">${city}</span></div>
+    `;
+
+    // Calculate price
+    const typeVal = document.getElementById('form-type').value;
+    const freqVal = document.getElementById('form-freq').value;
+    const { price, label } = getPrice(typeVal, selectedRooms, freqVal);
+    document.getElementById('final-price').textContent = price + '$';
+    document.getElementById('final-price-note').textContent = label;
+  }
+
+  function submitForm() {
+    const consent = document.getElementById('form-consent');
+    if (!consent.checked) {
+      showToast('Veuillez accepter les conditions');
+      return;
+    }
+
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Envoi en cours...';
+    btn.disabled = true;
+
+    // Simulate API call
+    setTimeout(() => {
+      goStep(4);
+    }, 1200);
+  }
+
+
+  // ── Toast notification ────────────────────────
+  function showToast(msg, duration = 3000) {
+    const toast = document.getElementById('toast');
+    document.getElementById('toast-msg').textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), duration);
+  }
 </script>
+
 </body>
 </html>
